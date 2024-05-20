@@ -1,0 +1,95 @@
+.employee {
+    width: 1258px;
+    position: relative;
+    left: 15px;
+    height: 100vw;
+    /* margin-left: 43px; */
+    /* margin-right: 100px; */
+    /* background: lightgreen; */
+    background: linear-gradient(to bottom, #f5faff 0%, #dde3f1 100%);
+}
+
+
+.employee > section:first-child {
+    height: auto;
+    position: relative;
+    /*display: flex;*/
+    /*background: lightpink;*/
+    width: 30vw;
+    top: 10px;
+    bottom: 0;
+    /*margin: auto;*/
+}
+
+
+.employee > section:first-child > p {
+    position: relative;
+    left: 441px;
+    top: 10px;
+    margin: 0;
+    font-size: 26px;
+    font-family: ARADHANA;
+
+}
+
+#employee_details > div > input {
+    width: 500px;
+}
+
+#employee_details {
+    width: fit-content;
+    height: fit-content;
+    position: relative;
+    left: 30px;
+    right: 0;
+    bottom: 0;
+    top:47px;
+    margin: auto;
+
+}
+
+#employee_buttons {
+    width: fit-content;
+    height: fit-content;
+    position: relative;
+    left: 287px;
+    right: 0;
+    bottom: 0;
+    top: 66px;
+    margin: auto;
+
+}
+
+.employee > section:nth-child(2)  {
+    position: absolute;
+    width: 500px;
+    left: 700px;
+    right: 0;
+    top: 89px;
+
+}
+
+.employee > section:nth-child(2) > div>input{
+    position: relative;
+    right: 10px;
+    color: black;
+}
+#employee_details > section{
+    width: 100vw;
+    height: 100vw;
+    margin: 0;
+    padding: 0;
+}
+
+.employee_table{
+    position: absolute;
+    left: -173px;
+    top: 1026px;
+
+}
+.form-check1{
+    display: block;
+    min-height: 1.5rem;
+    padding-left: 1.5em;
+    margin-bottom: .125rem;
+}

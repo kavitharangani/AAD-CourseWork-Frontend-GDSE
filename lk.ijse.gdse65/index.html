@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shoes (Pvt) Ltd</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="keywords" content="HTML,Shoes (Pvt) Ltd System,Kavindya">
+    <meta name="description" content="selling products.">
+    <meta name="revised" content="Home page, 01/08/2024">
+    <meta name="author" content="Kavindya Tharangani">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+
+    <link rel="stylesheet" href="design/css/customer.css">
+    <link rel="stylesheet" href="design/css/dashbord.css">
+    <link rel="stylesheet" href="design/css/employee.css">
+    <link rel="stylesheet" href="design/css/supplier.css">
+    <link rel="stylesheet" href="design/css/item.css">
+    <link rel="stylesheet" href="design/css/inventory.css">
+    <link rel="stylesheet" href="design/css/sale.css">
+
+
+
+    <link rel="stylesheet" href="design/css/style.css">
+    <link rel="stylesheet" href="assest/img/favicon.png">
+    <link rel="stylesheet" href="feather/feather.css">
+    <link rel="stylesheet" href="ti-icons/css/themify-icons.css">
+    <link rel="stylesheet" href="assest/css/normalize.css">
+
+    <link rel="stylesheet" href="assest/bootstrap/css/bootstrap.min.css">
+
+
+</head>
+<body>
+<div class="container-scroller">
+
+    <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+        <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+            <a class="navbar-brand brand-logo mr-5" href="index.html"><img src="design/img/logo.svg" class="mr-2" alt="logo"/></a>
+            <a class="navbar-brand brand-logo-mini" href="index.html"><img src="design/img/logo-mini.svg" alt="logo"/></a>
+        </div>
+    </nav>
+
+    <div class="container-fluid page-body-wrapper">
+
+        <nav class="sidebar sidebar-offcanvas" id="sidebar">
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html" >
+                        <i class="icon-grid menu-icon"></i>
+                        <span class="menu-title">Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#customer" id="customer_btn">
+                        <i class="icon-layout menu-icon"></i>
+                        <span class="menu-title">Customer</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#employee" id="employee_btn">
+                        <i class="icon-columns menu-icon"></i>
+                        <span class="menu-title">Employee</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#supplier" id="supplier_btn">
+                        <i class="icon-bar-graph menu-icon"></i>
+                        <span class="menu-title">Supplier</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#item" id="item_btn">
+                        <i class="icon-grid-2 menu-icon"></i>
+                        <span class="menu-title">Item</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#inventory" id="inventory_btn">
+                        <i class="icon-contract menu-icon"></i>
+                        <span class="menu-title">Inventory</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#place_order" id="sale_btn">
+                        <i class="icon-head menu-icon"></i>
+                        <span class="menu-title">Sales</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">
+                        <i class="icon-ban menu-icon"></i>
+                        <span class="menu-title">Refund</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="login.html">
+                        <i class="icon-paper menu-icon"></i>
+                        <span class="menu-title">Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <!-- partial -->
+        <div class="main-panel" id="main-panel">
+            <div class="content-wrapper">
+                <div class="row">
+                    <div class="col-md-12 grid-margin">
+                        <div class="row">
+                            <div class="col-12 col-xl-8 mb-4 mb-xl-0">
+                                <h3 class="font-weight-bold">Welcome Guys</h3>
+                            </div>
+                            <div class="col-12 col-xl-4">
+                                <div id="current-date"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 grid-margin stretch-card">
+                        <div class="card tale-bg">
+                            <div class="card-people mt-auto">
+                                <img src="design/img/people.svg" alt="people">
+                                <div class="weather-info">
+                                    <div class="d-flex">
+                                        <div>
+                                            <div id="current-temp"></div>
+                                            <!--                                            <h2 class="mb-0 font-weight-normal"><i class="icon-sun mr-2"></i>31<sup>C</sup></h2>-->
+                                        </div>
+                                        <div class="ml-2">
+                                            <h4 class="location font-weight-normal">Colombo</h4>
+                                            <h6 class="font-weight-normal">Sri Lanka</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 grid-margin transparent">
+                        <div class="row">
+                            <div class="col-md-6 mb-4 stretch-card transparent">
+                                <div class="card card-tale">
+                                    <div class="card-body">
+                                        <p class="mb-4">Today’s Bookings</p>
+                                        <p class="fs-30 mb-2">4006</p>
+                                        <p>10.00% (30 days)</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4 stretch-card transparent">
+                                <div class="card card-dark-blue">
+                                    <div class="card-body">
+                                        <p class="mb-4">Total Bookings</p>
+                                        <p class="fs-30 mb-2">61344</p>
+                                        <p>22.00% (30 days)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-4 mb-lg-0 stretch-card transparent">
+                                <div class="card card-light-blue">
+                                    <div class="card-body">
+                                        <p class="mb-4">Number of Meetings</p>
+                                        <p class="fs-30 mb-2">34040</p>
+                                        <p>2.00% (30 days)</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 stretch-card transparent">
+                                <div class="card card-light-danger">
+                                    <div class="card-body">
+                                        <p class="mb-4">Number of Clients</p>
+                                        <p class="fs-30 mb-2">47033</p>
+                                        <p>0.22% (30 days)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- partial -->
+        </div>
+        <!-- main-panel ends -->
+        <section id="customer" class="customer">
+
+            <section>
+
+                <p class="h2">Customer</p>
+                <form id="customer_form">
+
+
+                    <section id="customer_details">
+                        <div class="mb-3">
+                            <label for="cust_id" class="form-label">Customer ID</label>
+                            <input id="cust_id" type="text" class="form-control" placeholder="Enter Customer Code..">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name</label>
+                            <input id="name" type="text" class="form-control"
+                                   aria-describedby="emailHelp" placeholder="Enter Name..">
+                        </div>
+                        <div class="mb-3">
+                            <label for="joindate" class="form-label">Join Date</label>
+                            <input id="joindate" type="date" class="form-control" aria-describedby="emailHelp" placeholder="mm/dd/yyyy">
+                        </div>
+                        <div class="mb-3">
+                            <label for="totalpoint" class="form-label">Total Point</label>
+                            <input id="totalpoint" type="number" class="form-control"  aria-describedby="emailHelp" placeholder="Enter Point ..">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="inputState" class="form-label">Level</label>
+                            <select id="inputState" class="form-select">
+                                <option selected>Choose...</option>
+                                <option value="GOLD">Gold</option>
+                                <option value="SILVER">Silver</option>
+                                <option value="BRONZE">Bronze</option>
+                                <option value="NEW">New</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="dob" class="form-label">Date of Birth</label>
+                            <input id="dob" type="date" class="form-control" aria-describedby="emailHelp" placeholder="mm/dd/yyyy">
+                        </div>
+                    </section>
+
+
+                    <section id="customer_buttons">
+                        <div class="mt-5">
+                            <button id="save_customer" type="button" class="btn btn-outline-success">Save</button>
+                            <button id="update_customer" type="button" class="btn btn-outline-warning">Update</button>
+                            <button id="delete_customer" type="button" class="btn btn-outline-danger">Delete</button>
+                            <button id="customer_reset" type="reset" class="btn btn-outline-secondary">Reset</button>
+                        </div>
+
+
+                    </section>
+                </form>
+
+            </section>
+
+            <section>
+
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value="MALE" checked>
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Male
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" value="FEMALE" checked>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        Female
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" value="OTHER" checked>
+                    <label class="form-check-label" for="flexRadioDefault3">
+                        Other
+                    </label>
+                </div>
+                <div class="mb-3">
+                    <label for="address1" class="form-label">Address 01</label>
+                    <input id="address1" type="text" class="form-control"
+                           aria-describedby="emailHelp" placeholder="Enter Address..">
+                </div>
+                <div class="mb-3">
+                    <label for="address2" class="form-label">Address 02</label>
+                    <input id="address2" type="text" class="form-control"
+                           aria-describedby="emailHelp" placeholder="Enter Address..">
+                </div>
+                <div class="mb-3">
+                    <label for="address3" class="form-label">Address 03</label>
+                    <input id="address3" type="text" class="form-control"
+                           aria-describedby="emailHelp" placeholder="Enter Address..">
+                </div>
+                <div class="mb-3">
+                    <label for="address4" class="form-label">Address 04</label>
+                    <input id="address4" type="text" class="form-control"
+                           aria-describedby="emailHelp" placeholder="Enter Address..">
+                </div>
+                <div class="mb-3">
+                    <label for="address5" class="form-label">Address 05</label>
+                    <input id="address5" type="text" class="form-control"
+                           aria-describedby="emailHelp" placeholder="Enter Address..">
+                </div>
+
+            </section>
+
+            <section>
+                <div></div>
+                <table class="table">
+
+                    <thead>
+                    <tr>
+                        <th scope="col">Cus_ID</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Gender</th>
+                        <th scope="col">Join Date</th>
+                        <th scope="col">Level</th>
+                        <th scope="col">Total Points</th>
+                        <th scope="col">DOB</th>
+                        <th scope="col">Address1</th>
+                        <th scope="col">Address2</th>
+                        <th scope="col">Address3</th>
+                        <th scope="col">Address4</th>
+                        <th scope="col">Address5</th>
+                    </tr>
+                    </thead>
+                    <tbody id="customer-tbl-body">
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    </tbody>
+                </table>
+
+            </section>
+
+        </section>
+
+        <section id="employee" class="employee">
+
+            <section>
+
+                <p class="h2">Employee Form</p>
+                <form id="employee_form">
+
+                    <section id="employee_details">
+                        <div class="mb-3">
+                            <label for="emp_id" class="form-label">Employee ID</label>
+                            <input id="emp_id" type="text" class="form-control" placeholder="Enter Employee Code..">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="emp_name" class="form-label">Name</label>
+                            <input id="emp_name" type="text" class="form-control"
+                                   aria-describedby="emailHelp" placeholder="Enter Name..">
+                        </div>
+                        <div class="mb-3">
+                            <label for="emp_pic" class="form-label">Employee Profile Picture</label>
+                            <input id="emp_pic" type="file" class="form-control" placeholder="Enter Your Picture..">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="emp_gender" class="form-label">Gender</label>
+                            <select id="emp_gender" class="form-select">
+                                <option selected>Choose...</option>
+                                <option value="MALE">Male</option>
+                                <option value="FEMALE">Female</option>
+                                <option value="OTHER">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="status" class="form-label">Status</label>
+                            <input id="status" type="text" class="form-control"
+                                   aria-describedby="emailHelp" placeholder="Enter Status..">
+                        </div>
+                        <div class="mb-3">
+                            <label for="designation" class="form-label">Designation </label>
+                            <input id="designation" type="text" class="form-control"
+                                   aria-describedby="emailHelp" placeholder="Enter designation..">
+                        </div>
+
+                        <div class="col-md-4">
+                            <label for="emp_role" class="form-label">Role</label>
+                            <select id="emp_role" class="form-select">
+                                <option selected>Choose...</option>
+                                <option value="ADMIN">Admin</option>
+                                <option value="USER">User</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="emp_dob" class="form-label">Date Of Birth</label>
+                            <input id="emp_dob" type="date" class="form-control" aria-describedby="emailHelp" placeholder="mm/dd/yyyy">
+                        </div>
+                        <div class="mb-3">
+                            <label for="emp_joindate" class="form-label">Join Date</label>
+                            <input id="emp_joindate" type="date" class="form-control" aria-describedby="emailHelp" placeholder="mm/dd/yyyy">
+                        </div>
+                    </section>
+
+                    <section id="employee_buttons">
+                        <div class="mt-5">
+                            <button id="save_employee" type="button" class="btn btn-outline-success">Save</button>
+                            <button id="update_employee" type="button" class="btn btn-outline-warning">Update</button>
+                            <button id="delete_employee" type="button" class="btn btn-outline-danger">Delete</button>
+                            <button id="reset_employee" type="reset" class="btn btn-outline-secondary">Reset</button>
+                        </div>
+
+
+                    </section>
+                </form>
+
+            </section>
+
+            <section>
+
+                <div class="mb-3">
+                    <label for="attachedBranch" class="form-label">Branch</label>
+                    <input id="attachedBranch" type="text" class="form-control"
+                           aria-describedby="emailHelp" placeholder="Enter Branch..">
+                </div>
+                <div class="mb-3">
+                    <label for="employeeAddress1" class="form-label">Address 01</label>
+                    <input id="employeeAddress1" type="text" class="form-control"
+                           aria-describedby="emailHelp" placeholder="Enter Address..">
+                </div>
+                <div class="mb-3">
+                    <label for="employeeAddress2" class="form-label">Address 02</label>
+                    <input id="employeeAddress2" type="text" class="form-control"
+                           aria-describedby="emailHelp" placeholder="Enter Address..">
+                </div>
+                <div class="mb-3">
+                    <label for="employeeAddress3" class="form-label">Address 03</label>
+                    <input id="employeeAddress3" type="text" class="form-control"
+                           aria-describedby="emailHelp" placeholder="Enter Address..">
+                </div>
+                <div class="mb-3">
+                    <label for="employeeAddress4" class="form-label">Address 04</label>
+                    <input id="employeeAddress4" type="text" class="form-control"
+                           aria-describedby="emailHelp" placeholder="Enter Address..">
+                </div>
+                <div class="mb-3">
+                    <label for="employeeAddress5" class="form-label">Address 05</label>
+                    <input id="employeeAddress5" type="text" class="form-control"
+                           aria-describedby="emailHelp" placeholder="Enter Address..">
+                </div>
+
+                <div class="mb-3">
+                    <label for="contact" class="form-label">Contact No</label>
+                    <input id="contact" type="text" class="form-control" aria-describedby="emailHelp" placeholder="Enter Contact Here...">
+                </div>
+                <div class="mb-3">
+                    <label for="emp_email" class="form-label">Email</label>
+                    <input id="emp_email" type="email" class="form-control" aria-describedby="emailHelp" placeholder="Enter Email Here...">
+                </div>
+                <div class="mb-3">
+                    <label for="informInCaseOfEmergency" class="form-label">Emergency Case</label>
+                    <input id="informInCaseOfEmergency" type="text" class="form-control"
+                           aria-describedby="emailHelp" placeholder="Enter Case..">
+                </div>
+                <div class="mb-3">
+                    <label for="emergencyContactNo" class="form-label">Emergency Contact No</label>
+                    <input id="emergencyContactNo" type="text" class="form-control"
+                           aria-describedby="emailHelp" placeholder="Enter Emergency Contact..">
+                </div>
+
+            </section>
+
+            <section class="employee_table">
+                <div></div>
+                <table class="table">
+
+                    <thead>
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Name</th>
+                        <th scope="col" width="50px">ProPic</th>
+                        <th scope="col">gender</th>
+                        <th scope="col">status</th>
+                        <th scope="col">desig</th>
+                        <th scope="col">role</th>
+                        <th scope="col">dob</th>
+                        <th scope="col">joinDate</th>
+                        <th scope="col">atBranch</th>
+                        <th scope="col">Ad1</th>
+                        <th scope="col">Ad2</th>
+                        <th scope="col">Ad3</th>
+                        <th scope="col">Ad4</th>
+                        <th scope="col">Ad5</th>
+                        <th scope="col">conNo</th>
+                        <th scope="col">email</th>
+                        <th scope="col">infoEmer</th>
+                        <th scope="col">emerNo</th>
+
+                    </tr>
+                    </thead>
+                    <tbody id="employee-tbl-body">
+
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+
+                    </tbody>
+                </table>
+
+            </section>
+
+        </section>
+
+        <section id="supplier" class="supplier">
+            <section>
+
+                <p class="h2">Supplier Form</p>
+                <form id="supplier_form">
+
+
+                    <section id="supplier_details">
+                        <div class="mb-3">
+                            <label for="suppl_id" class="form-label">Supplier ID</label>
+                            <input id="suppl_id" type="text" class="form-control" placeholder="Enter Supplier Code..">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="suppl_name" class="form-label">Name</label>
+                            <input id="suppl_name" type="text" class="form-control"
+                                   aria-describedby="emailHelp" placeholder="Enter Name..">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="category" class="form-label">Category</label>
+                            <select id="category" class="form-select">
+                                <option selected>Choose...</option>
+                                <option value="INTERNATION">International</option>
+                                <option value="LOCAL">Local</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="sad1" class="form-label">Address 01</label>
+                            <input id="sad1" type="text" class="form-control"
+                                   aria-describedby="emailHelp" placeholder="Enter Address..">
+                        </div>
+                        <div class="mb-3">
+                            <label for="sad2" class="form-label">Address 02</label>
+                            <input id="sad2" type="text" class="form-control"
+                                   aria-describedby="emailHelp" placeholder="Enter Address..">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="sad3" class="form-label">Address 03</label>
+                            <input id="sad3" type="text" class="form-control"
+                                   aria-describedby="emailHelp" placeholder="Enter Address..">
+                        </div>
+                    </section>
+
+                    <section id="supplier_buttons">
+                        <div class="mt-5">
+                            <button id="save_supplier" type="button" class="btn btn-outline-success">Save</button>
+                            <button id="update_supplier" type="button" class="btn btn-outline-warning">Update</button>
+                            <button id="delete_supplier" type="button" class="btn btn-outline-danger">Delete</button>
+                            <button id="supplier_reset" type="reset" class="btn btn-outline-secondary">Reset</button>
+                            <button id="supplier_more" type="button" class="btn btn-outline-secondary">Details</button>
+                        </div>
+
+
+                    </section>
+                </form>
+
+            </section>
+
+            <section>
+
+
+                <div class="mb-3">
+                    <label for="sad4" class="form-label">Address 04</label>
+                    <input id="sad4" type="text" class="form-control"
+                           aria-describedby="emailHelp" placeholder="Enter Address..">
+                </div>
+                <div class="mb-3">
+                    <label for="sad5" class="form-label">Address 05</label>
+                    <input id="sad5" type="text" class="form-control"
+                           aria-describedby="emailHelp" placeholder="Enter Address..">
+                </div>
+                <div class="mb-3">
+                    <label for="sad6" class="form-label">Address 06</label>
+                    <input id="sad6" type="text" class="form-control"
+                           aria-describedby="emailHelp" placeholder="Enter Address..">
+                </div>
+
+                <div class="mb-3">
+                    <label for="contact1" class="form-label">Contact No 01</label>
+                    <input id="contact1" type="text" class="form-control" aria-describedby="emailHelp" placeholder="Enter Contact Here...">
+                </div>
+                <div class="mb-3">
+                    <label for="contact2" class="form-label">Contact No 02</label>
+                    <input id="contact2" type="text" class="form-control" aria-describedby="emailHelp" placeholder="Enter Contact Here...">
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input id="email" type="email" class="form-control" aria-describedby="emailHelp" placeholder="Enter Email Here...">
+                </div>
+            </section>
+
+            <section class="supplier_table">
+                <div></div>
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">Suppl_Id</th>
+                        <th scope="col">Suppl_Name</th>
+                        <th scope="col">Category</th>
+                        <th scope="col">Address 01</th>
+                        <th scope="col">Address 02</th>
+                        <th scope="col">Address 03</th>
+                        <th scope="col">Address 04</th>
+                        <th scope="col">Address 05</th>
+                        <th scope="col">Address 06</th>
+                        <th scope="col">Contact NO1</th>
+                        <th scope="col">Contact NO2</th>
+                        <th scope="col">Email</th>
+                    </tr>
+                    </thead>
+                    <tbody id="supplier-tbl-body">
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </section>
+
+
+        </section>
+
+        <section id="item" class="item">
+
+            <section>
+                <p class="h2">Item Form</p>
+
+                <form id="item_form">
+
+                    <section id="item_details">
+                        <div class="mb-3">
+                            <label for="item_id" class="form-label">Item Code</label>
+                            <input id="item_id" type="text" class="form-control" id="item_id"
+                                   aria-describedby="emailHelp">
+                        </div>
+                        <div class="mb-3">
+                            <label for="item_name" class="form-label">Name</label>
+                            <input id="item_name" type="text" class="form-control" id="item_name"
+                                   aria-describedby="emailHelp">
+                        </div>
+                        <div class="mb-3">
+                            <label for="item_description" class="form-label">Description</label>
+                            <input id="item_description" type="text" class="form-control" id="item_description"
+                                   aria-describedby="emailHelp">
+                        </div>
+                        <!--                <div class="mb-3">-->
+                        <!--                    <label for="item_qty" class="form-label">Qty.</label>-->
+                        <!--                    <input id="item_qty" type="number" class="form-control" id="item_qty" aria-describedby="emailHelp">-->
+                        <!--                </div>-->
+                        <!--                <div class="mb-3">-->
+                        <!--                    <label for="item_price" class="form-label">Price</label>-->
+                        <!--                    <input id="item_price" type="text" class="form-control" id="item_price" aria-describedby="emailHelp">-->
+                        <!--                </div>-->
+
+
+
+                    </section>
+
+                    <section id="item_buttons">
+                        <div class="mt-5">
+                            <button id="save_item" type="button" class="btn btn-outline-success">Save</button>
+                            <button id="update_item" type="button" class="btn btn-outline-warning">Update</button>
+                            <button id="delete_item" type="button" class="btn btn-outline-danger">Delete</button>
+                            <button id="item_reset" type="reset" class="btn btn-outline-secondary">Reset</button>
+                            <!--                    <button id="search_item" type="reset" class="btn btn-outline-dark">Search</button>-->
+
+                        </div>
+
+
+                    </section>
+                </form>
+
+            </section>
+
+            <section>
+                <div></div>
+                <table class="table">
+
+                    <thead>
+                    <tr>
+                        <th scope="col">Item_ID</th>
+                        <th scope="col">Item_Name</th>
+                        <th scope="col">Description</th>
+                        <!--                <th scope="col">Price</th>-->
+                        <!--                <th scope="col">Qty</th>-->
+
+                    </tr>
+                    </thead>
+                    <tbody id="item-tbl-body">
+
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <!--                <td></td>-->
+                        <!--                <td></td>-->
+                    </tr>
+
+                    </tbody>
+                </table>
+
+            </section>
+
+        </section>
+
+        <section id="inventory" class="inventory">
+            <section>
+
+                <p class="h2">Inventory Form</p>
+                <form id="inventory_form">
+
+                    <section id="inventory_details">
+                        <div class="form-group">
+                            <label for="item_code">Item Code</label>
+                            <select class="form-control" id="item_code">
+                            </select>
+                        </div>
+
+
+    <div class="mb-3">
+        <label for="item_desc" class="form-label">Item Desc</label>
+        <input id="item_desc" type="text" class="form-control"
+               aria-describedby="emailHelp" placeholder="Enter Name.." readonly>
+    </div>
+    <div class="mb-3">
+        <label for="item_qty" class="form-label">Item Qty </label>
+        <input id="item_qty" type="number" class="form-control"
+               aria-describedby="emailHelp"placeholder="Enter Qty.." >
+    </div>
+    <div class="mb-3">
+        <label for="item_pic" class="form-label">Item Pic</label>
+        <input id="item_pic" type="file" class="form-control"
+               aria-describedby="emailHelp" placeholder="Choose File..">
+    </div>
+
+    <div class="mb-3">
+        <label for="categorys" class="form-label">Category</label>
+        <input id="categorys" type="text" class="form-control"
+               aria-describedby="emailHelp" placeholder="Enter Address..">
+    </div>
+    </section>
+
+    <section id="inventory_buttons">
+        <div class="mt-5">
+            <button id="save_inventory" type="button" class="btn btn-outline-success">Save</button>
+            <button id="update_inventory" type="button" class="btn btn-outline-warning">Update</button>
+            <button id="reset_inventory" type="reset" class="btn btn-outline-secondary">Reset</button>
+        </div>
+
+
+    </section>
+    </form>
+
+    </section>
+
+    <section>
+
+
+        <div class="mb-3">
+            <label for="size" class="form-label">Size</label>
+            <input id="size" type="number" class="form-control"
+                   aria-describedby="emailHelp" placeholder="Enter Size..">
+        </div>
+        <!--        <div class="col-md-4">-->
+        <!--            <label for="size" class="form-label">Size</label>-->
+        <!--            <select id="size" class="form-select">-->
+        <!--                <option selected>Choose...</option>-->
+        <!--                <option value="size 5">Size 5</option>-->
+        <!--                <option value="size 6">Size 6</option>-->
+        <!--                <option value="size 7">Size 7</option>-->
+        <!--                <option value="size 8">Size 8</option>-->
+        <!--                <option value="size 9">Size 9</option>-->
+        <!--                <option value="size 10">Size 10</option>-->
+        <!--                <option value="size 11">Size 11</option>-->
+        <!--            </select>-->
+        <!--        </div>-->
+        <div class="mb-3">
+            <label for="unit_price_sale" class="form-label">unit_price_sale</label>
+            <input id="unit_price_sale" type="number" class="form-control"
+                   aria-describedby="emailHelp" placeholder="Enter Address..">
+        </div>
+        <div class="mb-3">
+            <label for="unit_price_buy" class="form-label">unit_price_buy</label>
+            <input id="unit_price_buy" type="number" class="form-control"
+                   aria-describedby="emailHelp" placeholder="Enter Address..">
+        </div>
+
+        <div class="mb-3">
+            <label for="expected_profit" class="form-label">expected_profit</label>
+            <input id="expected_profit" type="number" class="form-control" aria-describedby="emailHelp" placeholder="Enter Contact Here...">
+        </div>
+        <div class="mb-3">
+            <label for="profit_margin" class="form-label">profit_margin</label>
+            <input id="profit_margin" type="number" class="form-control" aria-describedby="emailHelp" placeholder="Enter Contact Here...">
+        </div>
+        <div class="mb-3">
+            <label for="statuss" class="form-label">status</label>
+            <input id="statuss" type="text" class="form-control" aria-describedby="emailHelp" placeholder="Enter Email Here...">
+        </div>
+    </section>
+
+    <section class="inventory_table">
+        <div></div>
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">item_code</th>
+                <th scope="col">item_desc</th>
+                <th scope="col">item_qty</th>
+                <th scope="col">item_pic </th>
+                <th scope="col">category</th>
+                <th scope="col">size</th>
+                <th scope="col">unit_price_sale</th>
+                <th scope="col">unit_price_buy</th>
+                <th scope="col">Address 06</th>
+                <th scope="col">expected_profit</th>
+                <th scope="col">profit_margin</th>
+                <th scope="col">status</th>
+            </tr>
+            </thead>
+            <tbody id="inventory-tbl-body">
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+
+
+    </section>
+
+    <section id="order" class="order">
+        <section>
+            <section id="order_form">
+                <p class="h2">Place order form</p>
+                <form>
+                    <div class="mb-3">
+                        <label for="order_id" class="form-label">Order ID</label>
+                        <input type="text" class="form-control" id="order_id"
+                               aria-describedby="emailHelp">
+                    </div>
+                    <div class="form-group">
+                        <label for="sale_item_id">Item Code</label>
+                        <select class="form-control" id="sale_item_id">
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="sale_cust_name">Customer Name</label>
+                        <select class="form-control" id="sale_cust_name">
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="description" class="form-label">Description </label>
+                        <input type="text" class="form-control" id="description"
+                               aria-describedby="emailHelp" readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label for="sale_size" class="form-label">Size</label>
+                        <input type="text" class="form-control" id="sale_size"
+                               aria-describedby="emailHelp">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="unit_price" class="form-label">Unit Price </label>
+                        <input type="number" class="form-control" id="unit_price"
+                               aria-describedby="emailHelp" readonly>
+                    </div>
+
+                    <section id="order_details" class="row g-3">
+                        <div class="col-auto">
+                            <label for="qty_on_hand" class="form-label">Qty. on hand </label>
+                            <input type="number" class="form-control" id="qty_on_hand"
+                                   aria-describedby="emailHelp" readonly>
+                        </div>
+
+
+                        <div class="col-auto">
+                            <label for="order_qty" class="form-label">Qty.</label>
+                            <input type="number" class="form-control" id="order_qty"
+                                   aria-describedby="emailHelp">
+                        </div>
+                        <div class="mb-3">
+                            <label for="purch_date" class="form-label">Purchase Date</label>
+                            <input id="purch_date" type="date" class="form-control" aria-describedby="emailHelp" placeholder="mm/dd/yyyy">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="payment" class="form-label">Payment Method</label>
+                            <select id="payment" class="form-select">
+                                <option selected>Choose...</option>
+                                <option value="Card">Card</option>
+                                <option value="Cash">Cash</option>
+                            </select>
+                        </div>
+                        <div class="col-auto">
+                            <label for="add_point" class="form-label">Add Point</label>
+                            <input type="number" class="form-control" id="add_point"
+                                   aria-describedby="emailHelp">
+                        </div>
+                        <div class="form-group">
+                            <label for="cashier_name">Cashier Name</label>
+                            <select class="form-control" id="cashier_name">
+                            </select>
+                        </div>
+                    </section>
+
+                    <button id="add_cart" type="button" class="btn btn-outline-success">+ Add to Cart</button>
+                    <button id="remove" type="button" class="btn btn-outline-danger">Remove</button>
+                </form>
+            </section>
+        </section>
+        <section id="order_table">
+            <div></div>
+            <table class="table">
+                <thead>
+                <tr>
+                    <td class="item_id">Item_ID</td>
+                    <td class="desc">Description</td>
+                    <td class="qty">Qty</td>
+                    <td class="total">Total</td>
+
+                </tr>
+                </thead>
+                <tbody id="order_table_body">
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+
+                </tbody>
+            </table>
+
+
+            <section class="row g-3">
+
+                <div class="col-auto">
+                    <label for="final_total" class="form-label">Total</label>
+                    <input id="final_total" type="text" class="form-control" id="final_total"
+                           aria-describedby="emailHelp">
+                </div>
+                <button id="place_ord" type="button" class="btn btn-outline-success">Place Order</button>
+            </section>
+
+
+        </section>
+
+    </section>
+
+    <section id="place_order" class="order_details">
+        <section>
+            <div></div>
+            <table class="table">
+
+                <thead>
+                <tr>
+                    <th scope="col">Order ID</th>
+                    <th scope="col">Customer ID</th>
+                    <th scope="col">Customer Name</th>
+                    <th scope="col">Item ID</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Total</th>
+                </tr>
+                </thead>
+                <tbody id="place-tbl-body">
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                </tbody>
+            </table>
+
+        </section>
+    </section>
+
+    </div>
+</div>
+
+
+
+
+<script src="assest/lib/jquery.min.js"></script>
+<script src="design/javaScript/Home%20page.js"></script>
+<script src="design/javaScript/dashbord.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="assest/bootstrap/js/bootstrap.min.js"></script>
+
+<script src="javaScript/Customer.js"></script>
+<script src="javaScript/Employee.js"></script>
+<script src="javaScript/Inventory.js"></script>
+<script src="javaScript/Item.js"></script>
+<script src="javaScript/Sale.js"></script>
+<script src="javaScript/Supplier.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<script>
+
+</script>
+</body>
+</html>

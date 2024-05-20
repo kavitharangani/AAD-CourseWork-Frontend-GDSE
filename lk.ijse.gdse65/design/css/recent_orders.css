@@ -1,0 +1,16 @@
+.order_details {
+    width: 1258px;
+    position: relative;
+    left: 15px;
+    height: 100vw;
+    /* margin-left: 43px; */
+    /* margin-right: 100px; */
+    /* background: lightgreen; */
+    background: linear-gradient(to bottom, #f5faff 0%, #dde3f1 100%);
+
+}
+
+.card:hover {
+    background-color: #e6e6e6;
+    color: black;
+}

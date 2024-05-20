@@ -1,0 +1,100 @@
+.customer {
+    width: 1258px;
+    position: relative;
+    left: 15px;
+    height: 100vw;
+    /* margin-left: 43px; */
+    /* margin-right: 100px; */
+    /* background: lightgreen; */
+    background: linear-gradient(to bottom, #f5faff 0%, #dde3f1 100%);
+}
+
+.customer > section:first-child {
+    height: auto;
+    position: relative;
+    width: 30vw;
+    top: 10px;
+    bottom: 0;
+
+}
+
+
+.customer > section:first-child > p {
+    position: relative;
+    left: 441px;
+    top: 10px;
+    margin: 0;
+    font-size: 26px;
+    font-family: ARADHANA;
+
+}
+
+#customer_details > div > input {
+    width: 450px;
+}
+
+#customer_details {
+    width: fit-content;
+    height: fit-content;
+    position: relative;
+    left: 30px;
+    right: 0;
+    bottom: 0;
+    top:47px;
+    margin: auto;
+
+}
+
+#customer_buttons {
+    width: fit-content;
+    height: fit-content;
+    position: relative;
+    left: 270px;
+    right: 0;
+    bottom: 0;
+    top: 83px;
+    margin: auto;
+}
+
+.customer > section:nth-child(2)  {
+    position: absolute;
+    width: 500px;
+    left: 690px;
+    right: 0;
+    top: 76px;
+    /*margin: auto;*/
+
+}
+.customer > section:nth-child(3) {
+    position: absolute;
+    right: 1066px;
+    width: 18vw;
+    top: 682px;
+    bottom: 0;
+
+}
+.customer > section:nth-child(2) > div>input{
+    position: relative;
+    right: 10px;
+    color: black;
+}
+#customer_details > section{
+    width: 100vw;
+    height: 100vw;
+    margin: 0;
+    padding: 0;
+}
+.customer_table{
+    position: absolute;
+    top: 65px;
+    left: 200px;
+    text-align: center;
+    font-size: 20px;
+    font-style: italic;
+}
+.table{
+    width: auto;
+    position: relative;
+    left: 19vw;
+    top: 7vw;
+}

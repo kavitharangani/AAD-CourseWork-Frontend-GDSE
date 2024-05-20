@@ -1,0 +1,116 @@
+.item {
+    width: 1258px;
+    position: relative;
+    left: 15px;
+    height: 100vw;
+    /* margin-left: 43px; */
+    /* margin-right: 100px; */
+    /* background: lightgreen; */
+    background: linear-gradient(to bottom, #f5faff 0%, #dde3f1 100%);
+}
+
+.item > section:first-child {
+    height: auto;
+    position: relative;
+    width: 30vw;
+    top: 10px;
+    bottom: 0;
+
+    /*height: 100vw;*/
+    /*position: absolute;*/
+    /*!* background: lightpink; *!*/
+    /*width: 100%;*/
+    /*top: 0;*/
+    /*left: 293px;*/
+    /*bottom: 0;*/
+    /*margin: auto;*/
+    /*box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;*/
+    /*background: linear-gradient(to bottom, #636aec 0%, #dee8e6 100%);*/
+}
+
+.item > section:first-child > p {
+    position: absolute;
+    left: 424px;
+    top: 30px;
+    margin: 0;
+    font-size: 26px;
+    font-family: ARADHANA;
+    width: 172px;
+
+}
+.item::-webkit-scrollbar{
+    height: 0;
+}
+
+#item_details > div > input {
+    width: 500px;
+}
+
+#item_details {
+    width: fit-content;
+    height: fit-content;
+    position: absolute;
+    left: 65px;
+    right: 0;
+    bottom: 0;
+    top: -127px;
+    margin: auto;
+}
+
+#item_buttons {
+    width: 500px;
+    height: fit-content;
+    position: absolute;
+    left: 341px;
+    right: -8px;
+    bottom: 0;
+    top: 136px;
+    margin: auto
+
+}
+
+
+.item > section:nth-child(2) {
+
+    height: 80vh;
+    position: absolute;
+    /*background: lightpink;*/
+    right: 265px;
+    width: 42vw;
+    top: 294px;
+    bottom: 0;
+    bottom: 0;
+    margin: auto;
+    /*box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(6, 19, 31, 0.35) 0px -2px 6px 0px inset;*/
+
+
+}
+.item > section:nth-child(2) > div {
+
+    position: absolute;
+    bottom: 0;
+    left: 40px;
+    right: 0;
+    top: 0;
+    background-repeat: no-repeat;
+    opacity: 0.2;
+
+}
+
+
+.item > section:nth-child(2) > table {
+    position: absolute;
+    width: 500px;
+    left: -179px;
+    right: -13px;
+    top: -34px;
+    margin: auto;
+
+}
+
+#item_form{
+    position: absolute;
+    top: 321px;
+    left: 84px;
+}
+
