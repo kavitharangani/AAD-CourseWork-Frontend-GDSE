@@ -201,7 +201,12 @@ $(document).ready(function () {
 });
 
 
-
+function calculateExpectedProfit() {
+    var unitPriceSale = parseFloat(document.getElementById('unit_price_sale').value) || 0;
+    var unitPriceBuy = parseFloat(document.getElementById('unit_price_buy').value) || 0;
+    var expectedProfit = unitPriceSale - unitPriceBuy;
+    document.getElementById('expected_profit').value = expectedProfit;
+}
 
 
 

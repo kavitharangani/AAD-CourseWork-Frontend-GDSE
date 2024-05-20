@@ -269,3 +269,33 @@
     font-family: "BauerBodni Blk BT";
     font-size: 20px;
 }
+
+.weather-info {
+    padding: 20px;
+    background-color: #f1f1f1;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.d-flex {
+    display: flex;
+    align-items: center;
+}
+
+#current-temp {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.location {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.font-weight-normal {
+    font-weight: normal;
+}
+
+.ml-2 {
+    margin-left: 20px;
+}

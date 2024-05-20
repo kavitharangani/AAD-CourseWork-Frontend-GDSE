@@ -127,7 +127,7 @@
                                             <!--                                            <h2 class="mb-0 font-weight-normal"><i class="icon-sun mr-2"></i>31<sup>C</sup></h2>-->
                                         </div>
                                         <div class="ml-2">
-                                            <h4 class="location font-weight-normal">Colombo</h4>
+                                            <h4 class="location font-weight-normal">Panadura</h4>
                                             <h6 class="font-weight-normal">Sri Lanka</h6>
                                         </div>
                                     </div>
@@ -810,18 +810,15 @@
         <!--        </div>-->
         <div class="mb-3">
             <label for="unit_price_sale" class="form-label">unit_price_sale</label>
-            <input id="unit_price_sale" type="number" class="form-control"
-                   aria-describedby="emailHelp" placeholder="Enter Address..">
+            <input id="unit_price_sale" type="number" class="form-control" aria-describedby="emailHelp" placeholder="Enter Sale Price.." oninput="calculateExpectedProfit()">
         </div>
         <div class="mb-3">
             <label for="unit_price_buy" class="form-label">unit_price_buy</label>
-            <input id="unit_price_buy" type="number" class="form-control"
-                   aria-describedby="emailHelp" placeholder="Enter Address..">
+            <input id="unit_price_buy" type="number" class="form-control" aria-describedby="emailHelp" placeholder="Enter Buy Price.." oninput="calculateExpectedProfit()">
         </div>
-
         <div class="mb-3">
             <label for="expected_profit" class="form-label">expected_profit</label>
-            <input id="expected_profit" type="number" class="form-control" aria-describedby="emailHelp" placeholder="Enter Contact Here...">
+            <input id="expected_profit" type="number" class="form-control" aria-describedby="emailHelp" placeholder="Expected Profit..." readonly>
         </div>
         <div class="mb-3">
             <label for="profit_margin" class="form-label">profit_margin</label>
@@ -874,7 +871,7 @@
 
     </section>
 
-    <section id="order" class="order">
+        <section id="order" class="order">
         <section>
             <section id="order_form">
                 <p class="h2">Place order form</p>
@@ -993,7 +990,7 @@
 
     </section>
 
-    <section id="place_order" class="order_details">
+        <section id="place_order" class="order_details">
         <section>
             <div></div>
             <table class="table">
@@ -1042,6 +1039,7 @@
 <script src="javaScript/Item.js"></script>
 <script src="javaScript/Sale.js"></script>
 <script src="javaScript/Supplier.js"></script>
+<script src="javaScript/Date.js"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
