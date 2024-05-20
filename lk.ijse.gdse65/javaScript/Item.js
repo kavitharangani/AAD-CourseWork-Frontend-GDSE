@@ -131,3 +131,9 @@ $(document).ready(function () {
 
     loadAllItems();
 });
+function updateItemQty() {
+    var itemQty = parseFloat(document.getElementById('item_qty').value) || 0;
+    var orderQty = parseFloat(document.getElementById('order_qty').value) || 0;
+    var updatedQty = itemQty - orderQty;
+    document.getElementById('item_qty').value = updatedQty;
+}

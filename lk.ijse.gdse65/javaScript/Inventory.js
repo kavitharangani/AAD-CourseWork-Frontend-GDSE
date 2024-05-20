@@ -95,6 +95,10 @@ $(document).ready(function () {
         });
     }
 
+    $("#order_qty").on("input", function () {
+        updateItemQty();
+    });
+
     $("#save_inventory").click(function () {
         let formData = new FormData();
         formData.append("item_code", $("#item_code").val());
@@ -112,6 +116,7 @@ $(document).ready(function () {
         if (fileInput.files.length > 0) {
             formData.append("item_pic", fileInput.files[0]);
         }
+
 
         $.ajax({
             method: "POST",
