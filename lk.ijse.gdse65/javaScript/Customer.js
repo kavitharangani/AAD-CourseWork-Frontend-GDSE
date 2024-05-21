@@ -149,5 +149,3 @@ $(document).ready(function (){
     // Load customers on page load
     loadAllCustomer();
 });
-
-
