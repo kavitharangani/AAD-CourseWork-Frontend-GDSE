@@ -1,5 +1,4 @@
-
-$(document).ready(function (){
+$(document).ready(function () {
     // Function to load all customers
     const loadAllCustomer = () => {
         $("#customer-tbl-body").empty();
@@ -12,21 +11,29 @@ $(document).ready(function (){
             },
             success: function (resp) {
                 for (const customer of resp) {
-                    let row = `<tr><td>${customer.customer_code}</td><td>${customer.customer_name}</td><td>${customer.gender}</td><td>${customer.join_date}</td>
-                                    <td>${customer.level}</td><td>${customer.total_points}</td><td>${customer.dob}</td><td>${customer.address}</td></tr>`;
+                    let row = `<tr>
+                        <td>${customer.customer_code}</td>
+                        <td>${customer.customer_name}</td>
+                        <td>${customer.gender}</td>
+                        <td>${customer.join_date}</td>
+                        <td>${customer.level}</td>
+                        <td>${customer.total_points}</td>
+                        <td>${customer.dob}</td>
+                        <td>${customer.address}</td>
+                    </tr>`;
                     $("#customer-tbl-body").append(row);
                 }
-                callMethod();
+                callCustomerMethod();
             },
             error: function (xhr, status, error) {
-                alert("Error: " + error);
+                alert("Error loading customers: " + error);
             }
         });
-    }
+    };
 
     // Function to bind click event to customer table rows
-    function callMethod() {
-        $("#customer-tbl-body>tr").click(function (){
+    function callCustomerMethod() {
+        $("#customer-tbl-body>tr").click(function () {
             let customer_id = $(this).children().eq(0).text();
             let name = $(this).children().eq(1).text();
             let gender = $(this).children().eq(2).text();
@@ -46,6 +53,7 @@ $(document).ready(function (){
             $("#address").val(address);
         });
     }
+
 
     // Save customer
     $("#save_customer").click(function () {
@@ -79,7 +87,7 @@ $(document).ready(function (){
     });
 
     // Update customer
-    $("#update_customer").click(function (){
+    $("#update_customer").click(function () {
         let formData = {
             customer_code: $("#cust_id").val(),
             customer_name: $("#name").val(),
