@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Shoes (Pvt) Ltd</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="HTML,Shoes (Pvt) Ltd System,Kavindya">
     <meta name="description" content="selling products.">
     <meta name="revised" content="Home page, 01/08/2024">
@@ -17,8 +18,7 @@
     <link rel="stylesheet" href="design/css/item.css">
     <link rel="stylesheet" href="design/css/inventory.css">
     <link rel="stylesheet" href="design/css/sale.css">
-
-
+    <link rel="stylesheet" href="design/css/adminPanel.css">
 
     <link rel="stylesheet" href="design/css/style.css">
     <link rel="stylesheet" href="assest/img/favicon.png">
@@ -121,15 +121,12 @@
                             <div class="card-people mt-auto">
                                 <img src="design/img/people.svg" alt="people">
                                 <div class="weather-info">
-                                    <div class="d-flex">
-                                        <div>
-                                            <div id="current-temp"></div>
-                                            <!--                                            <h2 class="mb-0 font-weight-normal"><i class="icon-sun mr-2"></i>31<sup>C</sup></h2>-->
-                                        </div>
-                                        <div class="ml-2">
-                                            <h4 class="location font-weight-normal">Panadura</h4>
-                                            <h6 class="font-weight-normal">Sri Lanka</h6>
-                                        </div>
+                                    <div id="weather">
+                                        <h2>Weather Info</h2>
+                                        <p id="location">Location: </p>
+                                        <p id="temperature">Temperature: </p>
+                                        <p id="weatherDesc">Description: </p>
+                                    </div>
                                     </div>
                                 </div>
                             </div>
@@ -140,8 +137,8 @@
                             <div class="col-md-6 mb-4 stretch-card transparent">
                                 <div class="card card-tale">
                                     <div class="card-body">
-                                        <p class="mb-4">Today’s Bookings</p>
-                                        <p class="fs-30 mb-2">4006</p>
+                                        <p class="mb-4">Total Customer</p>
+                                        <p class="fs-30 mb-2" id="totalCustomersLabel"></p>
                                         <p>10.00% (30 days)</p>
                                     </div>
                                 </div>
@@ -1041,13 +1038,15 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="assest/bootstrap/js/bootstrap.min.js"></script>
 
-<script src="javaScript/Customer.js"></script>
+<script src="javaScript/Customer.js" ></script>
 <script src="javaScript/Employee.js"></script>
 <script src="javaScript/Inventory.js"></script>
 <script src="javaScript/Item.js"></script>
 <script src="javaScript/Sale.js"></script>
 <script src="javaScript/Supplier.js"></script>
 <script src="javaScript/Date.js"></script>
+<script src="javaScript/AdminPanel.js"></script>
+
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>

@@ -1,12 +1,12 @@
-//add hovered class to selected list item
-let  list = document.querySelectorAll(".navigation li");
+let list = document.querySelectorAll(".navigation li");
 
-function  activeLink(){
+function activeLink() {
     list.forEach((item) => {
         item.classList.remove("hovered");
     });
     this.classList.add("hovered");
 }
+
 list.forEach(item => item.addEventListener("mouseover", activeLink));
 
 // Menu Toggle
@@ -18,3 +18,4 @@ toggle.onclick = function () {
     navigation.classList.toggle("active");
     main.classList.toggle("active");
 }
+
