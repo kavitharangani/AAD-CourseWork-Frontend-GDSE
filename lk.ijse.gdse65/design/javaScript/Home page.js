@@ -6,6 +6,7 @@ $("#inventory").css('display','none');
 $("#order").css('display','none');
 $("#place_order").css('display','none');
 $("#adminPanel").css('display','none');
+$("#container").css('display','none');
 
 
 /*Buttons*/
@@ -20,6 +21,7 @@ $('#customer_btn').on("click", () => {
     $("#main-panel").css('display','none');
     $("#place_order").css('display','none');
     $("#adminPanel").css('display','none');
+    $("#container").css('display','none');
 
 
 })
@@ -34,6 +36,8 @@ $('#employee_btn').on("click", () => {
     $("#main-panel").css('display','none');
     $("#place_order").css('display','none');
     $("#adminPanel").css('display','none');
+    $("#container").css('display','none');
+
 
 
 })
@@ -63,6 +67,8 @@ $('#item_btn').on("click", () => {
     $("#main-panel").css('display','none');
     $("#place_order").css('display','none');
     $("#adminPanel").css('display','none');
+    $("#container").css('display','none');
+
 
 
 
@@ -78,6 +84,8 @@ $('#inventory_btn').on("click", () => {
     $("#main-panel").css('display','none');
     $("#place_order").css('display','none');
     $("#adminPanel").css('display','none');
+    $("#container").css('display','none');
+
 
 
 
@@ -108,6 +116,8 @@ $('#adminPanel_btn').on("click", () => {
     $("#main-panel").css('display','none');
     $("#place_order").css('display','none');
     $("#adminPanel").css('display','block');
+    $("#container").css('display','none');
+
 
 
 })
@@ -139,6 +149,8 @@ $('.navbar-brand').on("click", () => {
     $("#menu-section").css('display','block');
     $("#place_order").css('display','none');
     $("#adminPanel").css('display','none');
+    $("#container").css('display','none');
+
 
 
 })
@@ -154,6 +166,8 @@ $('#nav_cust').on("click", () => {
     $('#menu-section').css('display', 'none');
     $("#place_order").css('display','none');
     $("#adminPanel").css('display','none');
+    $("#container").css('display','none');
+
 
 
 })
@@ -169,6 +183,8 @@ $('#nav_employee').on("click", () => {
     $('#menu-section').css('display', 'none');
     $("#place_order").css('display','none');
     $("#adminPanel").css('display','none');
+    $("#container").css('display','none');
+
 
 
 })
@@ -185,6 +201,8 @@ $('#nav_supplier').on("click", () => {
     $("#menu-section").css('display','none');
     $("#place_order").css('display','none');
     $("#adminPanel").css('display','none');
+    $("#container").css('display','none');
+
 
 
 })
@@ -199,6 +217,8 @@ $('#nav_item').on("click", () => {
     $("#menu-section").css('display','none');
     $("#place_order").css('display','none');
     $("#adminPanel").css('display','none');
+    $("#container").css('display','none');
+
 
 
 })
@@ -213,6 +233,7 @@ $('#nav_inventory').on("click", () => {
     $("#menu-section").css('display','none');
     $("#place_order").css('display','none');
     $("#adminPanel").css('display','none');
+    $("#container").css('display','none');
 
 
 })
@@ -228,6 +249,8 @@ $('#nav_place').on('click', () => {
     $("#place_order").css('display','none');
     $("#adminPanel").css('display','none');
 
+    $("#container").css('display','none');
+
 })
 
 $('#nav_recent').on('click', () => {
@@ -240,6 +263,7 @@ $('#nav_recent').on('click', () => {
     $("#menu-section").css('display','none');
     $("#place_order").css('display','block');
     $("#adminPanel").css('display','none');
+    $("#container").css('display','none');
 
 
 })
@@ -252,7 +276,9 @@ $('#nav-adminPanel').on('click', () => {
     $("#order").css('display','none');
     $("#menu-section").css('display','none');
     $("#place_order").css('display','none');
-    $("#adminPanel").css('display','block');
+    $("#adminPanel").css('display','none');
+    $("#container").css('display','block');
+
 
 })
 
