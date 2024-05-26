@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="design/css/item.css">
     <link rel="stylesheet" href="design/css/inventory.css">
     <link rel="stylesheet" href="design/css/sale.css">
-    <link rel="stylesheet" href="design/css/adminPanel.css">
+    <link rel="stylesheet" href="design/css/adminpanel.css">
 
     <link rel="stylesheet" href="design/css/style.css">
     <link rel="stylesheet" href="assest/img/favicon.png">
@@ -92,8 +92,14 @@
                         <span class="menu-title">Refund</span>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="login.html">
+                <li class="nav-adminPanel">
+                    <a class="nav-link" href="#adminPanel" id="adminPanel_btn">
+                        <i class="icon-head menu-icon"></i>
+                        <span class="menu-title">Admin Panel</span>
+                    </a>
+                </li>
+                <li class="nav-logout">
+                    <a id="logoutButton" class="nav-link" href="../lk.ijse.gdse65/logging.html">
                         <i class="icon-paper menu-icon"></i>
                         <span class="menu-title">Logout</span>
                     </a>
@@ -1029,6 +1035,89 @@
         </section>
     </section>
 
+        <section id="adminPanel" class="adminPanel">
+
+            <section>
+
+               <section id="adminPanel_details">
+                        <div class="main-panel" id="main-panel1">
+                            <div class="content-wrapper">
+                                <div class="row">
+                                    <div class="col-md-12 grid-margin">
+                                        <div class="row">
+                                            <div class="col-12 col-xl-8 mb-4 mb-xl-0">
+                                                <h3 class="font-weight-bold">Admin Panel</h3>
+                                            </div>
+                                            <div class="col-12 col-xl-4">
+                                                <div id="current-date1"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 grid-margin stretch-card">
+                                        <div class="card tale-bg">
+                                            <div class="card-people mt-auto">
+                                                <img src="design/img/admin.jpg" alt="people">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 grid-margin transparent">
+                                        <div class="row">
+                                            <div class="col-md-6 mb-4 stretch-card transparent">
+                                                <div class="card card-tale">
+                                                    <div class="card-body">
+                                                        <p class="mb-4">Total Customer</p>
+                                                        <p class="fs-30 mb-2" id="totalCustomersLabel1"></p>
+                                                        <p>10.00% (30 days)</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 mb-4 stretch-card transparent">
+                                                <div class="card card-dark-blue">
+                                                    <div class="card-body">
+                                                        <p class="mb-4">Total Employee</p>
+                                                        <p class="fs-30 mb-2" id="totalEmployeesLabel1"></p>
+                                                        <p>22.00% (30 days)</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6 mb-4 mb-lg-0 stretch-card transparent">
+                                                <div class="card card-light-blue">
+                                                    <div class="card-body">
+                                                        <p class="mb-4">Total Supplier</p>
+                                                        <p class="fs-30 mb-2" id="totalSuppliersLabel1"></p>
+                                                        <p>2.00% (30 days)</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 stretch-card transparent">
+                                                <div class="card card-light-danger">
+                                                    <div class="card-body">
+                                                        <p class="mb-4">Total Inventory</p>
+                                                        <p class="fs-30 mb-2" id="totalInventorysLabel1"></p>
+                                                        <p>0.22% (30 days)</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- partial -->
+                        </div>
+
+
+                        </section>
+                </form>
+                        </section>
+
+        </section>
+
+
     </div>
 </div>
 
@@ -1050,6 +1139,15 @@
 <script src="javaScript/Supplier.js"></script>
 <script src="javaScript/Date.js"></script>
 <script src="javaScript/AdminPanel.js"></script>
+
+<script>
+    $(document).ready(function(){
+        $('#logoutButton').on('click', function(event){
+            event.preventDefault(); // Prevent the default action
+            window.location.href = "../lk.ijse.gdse65/logging.html"; // Navigate to logging.html
+        });
+    });
+</script>
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
