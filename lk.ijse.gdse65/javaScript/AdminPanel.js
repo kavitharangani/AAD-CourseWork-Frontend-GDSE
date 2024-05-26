@@ -1,25 +1,4 @@
-$(document).ready(function() {
-    // Function to fetch the total number of customers and update the label
-    function updateCustomerCount() {
-        $.ajax({
-            url: "http://localhost:8081/shop/api/v1/customer/count",
-            method: "GET",
-            dataType: "json",
-            headers: {
-                "Authorization": "Bearer " + localStorage.getItem("accessToken")
-            },
-            success: function(data) {
-                $('#totalCustomersLabel').text(data);
-            },
-            error: function(xhr, status, error) {
-                console.error("Failed to fetch customer count:", error);
-            }
-        });
-    }
 
-    // Call the function when the page is loaded
-    updateCustomerCount();
-});
 document.addEventListener('DOMContentLoaded', () => {
     const apiKey = '8a06f4dc660ba18f71e14f9f327bd561'; // Replace with your OpenWeatherMap API key
     const city = 'Panadura'; // You can replace this with any city you want
@@ -46,8 +25,29 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('location').textContent = 'Error fetching weather data';
         });
 });
+
 $(document).ready(function() {
-    // Function to fetch the total number of customers and update the label
+    function updateCustomerCount() {
+        $.ajax({
+            url: "http://localhost:8081/shop/api/v1/customer/count",
+            method: "GET",
+            dataType: "json",
+            headers: {
+                "Authorization": "Bearer " + localStorage.getItem("accessToken")
+            },
+            success: function(data) {
+                $('#totalCustomersLabel').text(data);
+            },
+            error: function(xhr, status, error) {
+                console.error("Failed to fetch customer count:", error);
+            }
+        });
+    }
+
+    updateCustomerCount();
+});
+
+$(document).ready(function() {
     function updateEmployeeCount() {
         $.ajax({
             url: "http://localhost:8081/shop/api/v1/employee/count",
@@ -65,6 +65,26 @@ $(document).ready(function() {
         });
     }
 
-    // Call the function when the page is loaded
     updateEmployeeCount();
+});
+
+$(document).ready(function() {
+    function updateSupplierCount() {
+        $.ajax({
+            url: "http://localhost:8081/shop/api/v1/suppliers/count",
+            method: "GET",
+            dataType: "json",
+            headers: {
+                "Authorization": "Bearer " + localStorage.getItem("accessToken")
+            },
+            success: function(data) {
+                $('#totalSuppliersLabel').text(data);
+            },
+            error: function(xhr, status, error) {
+                console.error("Failed to fetch employee count:", error);
+            }
+        });
+    }
+
+    updateSupplierCount();
 });
