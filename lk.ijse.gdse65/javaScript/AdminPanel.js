@@ -88,3 +88,24 @@ $(document).ready(function() {
 
     updateSupplierCount();
 });
+
+$(document).ready(function() {
+    function updateInventorysCount() {
+        $.ajax({
+            url: "http://localhost:8081/shop/api/v1/inventory/count",
+            method: "GET",
+            dataType: "json",
+            headers: {
+                "Authorization": "Bearer " + localStorage.getItem("accessToken")
+            },
+            success: function(data) {
+                $('#totalInventorysLabel').text(data);
+            },
+            error: function(xhr, status, error) {
+                console.error("Failed to fetch item count:", error);
+            }
+        });
+    }
+
+    updateInventorysCount();
+});
