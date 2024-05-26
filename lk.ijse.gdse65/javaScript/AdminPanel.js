@@ -46,3 +46,25 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('location').textContent = 'Error fetching weather data';
         });
 });
+$(document).ready(function() {
+    // Function to fetch the total number of customers and update the label
+    function updateEmployeeCount() {
+        $.ajax({
+            url: "http://localhost:8081/shop/api/v1/employee/count",
+            method: "GET",
+            dataType: "json",
+            headers: {
+                "Authorization": "Bearer " + localStorage.getItem("accessToken")
+            },
+            success: function(data) {
+                $('#totalEmployeesLabel').text(data);
+            },
+            error: function(xhr, status, error) {
+                console.error("Failed to fetch employee count:", error);
+            }
+        });
+    }
+
+    // Call the function when the page is loaded
+    updateEmployeeCount();
+});

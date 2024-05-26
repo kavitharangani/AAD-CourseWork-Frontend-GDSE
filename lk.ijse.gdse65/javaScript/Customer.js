@@ -157,24 +157,4 @@ $(document).ready(function () {
     // Load customers on page load
     loadAllCustomer();
 
-    // function loadCustomerCount() {
-    //     $.ajax({
-    //         url: "http://localhost:8081/shop/api/v1/customer/count",
-    //         method: "GET",
-    //         dataType: "json",
-    //         success: function(data) {
-    //             // Assuming the response contains the count directly
-    //             $("#totalCustomersLabel").text(`Total Customers: ${data}`);
-    //         },
-    //         error: function(xhr, status, error) {
-    //             console.error("Error fetching data:", error);
-    //             $("#totalCustomersLabel").text("Error loading data");
-    //         }
-    //     });
-    // }
-    //
-    // // Load the customer count on page load
-    // window.onload = function() {
-    //     loadCustomerCount();
-    // };
  });
