@@ -109,3 +109,45 @@ $(document).ready(function() {
 
     updateInventorysCount();
 });
+
+$(document).ready(function() {
+    function updateInventoryProfit() {
+        $.ajax({
+            url: "http://localhost:8081/shop/api/v1/inventory/totalProfit",
+            method: "GET",
+            dataType: "json",
+            headers: {
+                "Authorization": "Bearer " + localStorage.getItem("accessToken")
+            },
+            success: function(data) {
+                $('#totalProfitLabel').text(data);
+            },
+            error: function(xhr, status, error) {
+                console.error("Failed to fetch item count:", error);
+            }
+        });
+    }
+
+    updateInventoryProfit()
+});
+
+$(document).ready(function() {
+    function updateInventorySales() {
+        $.ajax({
+            url: "http://localhost:8081/shop/api/v1/inventory/total-sales",
+            method: "GET",
+            dataType: "json",
+            headers: {
+                "Authorization": "Bearer " + localStorage.getItem("accessToken")
+            },
+            success: function(data) {
+                $('#totalSalesLabel').text(data);
+            },
+            error: function(xhr, status, error) {
+                console.error("Failed to fetch item count:", error);
+            }
+        });
+    }
+
+    updateInventorySales();
+});

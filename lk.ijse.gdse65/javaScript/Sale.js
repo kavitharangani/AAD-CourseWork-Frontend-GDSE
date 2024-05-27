@@ -143,6 +143,7 @@ function addToCart() {
             updateCartTotal();
             return false;
         }
+
     });
 
     if (!itemExists) {

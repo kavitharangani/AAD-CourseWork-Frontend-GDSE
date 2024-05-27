@@ -248,7 +248,6 @@ $('#nav_place').on('click', () => {
     $("#menu-section").css('display','none');
     $("#place_order").css('display','none');
     $("#adminPanel").css('display','none');
-
     $("#container").css('display','none');
 
 })
