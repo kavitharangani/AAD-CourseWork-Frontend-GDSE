@@ -151,3 +151,45 @@ $(document).ready(function() {
 
     updateInventorySales();
 });
+
+$(document).ready(function() {
+    function mostPopularItem() {
+        $.ajax({
+            url: "http://localhost:8081/shop/api/v1/inventory/most-sold-item-name",
+            method: "GET",
+            dataType: "json",
+            headers: {
+                "Authorization": "Bearer " + localStorage.getItem("accessToken")
+            },
+            success: function(data) {
+                $('#mostPopularItem').text(data);
+            },
+            error: function(xhr, status, error) {
+                console.error("Failed to fetch item count:", error);
+            }
+        });
+    }
+
+    mostPopularItem();
+});
+
+$(document).ready(function() {
+    function mostPopularItemQty() {
+        $.ajax({
+            url: "http://localhost:8081/shop/api/v1/inventory/most-sold-item-qty",
+            method: "GET",
+            dataType: "json",
+            headers: {
+                "Authorization": "Bearer " + localStorage.getItem("accessToken")
+            },
+            success: function(data) {
+                $('#mostPopularItemQty').text(data);
+            },
+            error: function(xhr, status, error) {
+                console.error("Failed to fetch item count:", error);
+            }
+        });
+    }
+
+    mostPopularItemQty();
+});
