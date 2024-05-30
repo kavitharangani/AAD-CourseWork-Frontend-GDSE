@@ -87,7 +87,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="index.html">
+                    <a class="nav-link" href="#refund_form" id="refund_btn">
                         <i class="icon-ban menu-icon"></i>
                         <span class="menu-title">Refund</span>
                     </a>
@@ -480,7 +480,7 @@
                     <tr>
                         <th scope="col">Id</th>
                         <th scope="col">Name</th>
-                        <th scope="col" width="50px">ProPic</th>
+<!--                        <th scope="col" width="50px">ProPic</th>-->
                         <th scope="col">gender</th>
                         <th scope="col">status</th>
                         <th scope="col">desig</th>
@@ -1088,6 +1088,60 @@
 
         </section>
 
+        <section id="refund_form">
+            <h2>Refund Processing Form</h2>
+            <form>
+                <div class="mb-3">
+                    <label for="refund_desc" class="form-label">Description</label>
+                    <input type="text" class="form-control" id="refund_desc">
+                </div>
+
+                <div class="mb-3">
+                    <label for="refund_date" class="form-label">Refund Date</label>
+                    <input id="refund_date" type="date" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label for="employeeRef">Employee Code</label>
+                    <select class="form-control" id="employeeRef">
+                        <option selected>Select Employee code</option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label for="employeename" class="form-label">Employee Name</label>
+                    <input type="text" class="form-control" id="employeename" readonly>
+                </div>
+
+                <div class="mb-3">
+                    <label for="re_order_no" class="form-label">Refund Order No</label>
+                    <input type="text" class="form-control" id="re_order_no">
+                </div>
+
+                <div class="mb-3">
+                    <label for="cusId" class="form-label">Customer ID</label>
+                    <input type="text" class="form-control" id="cusId">
+                </div>
+
+                <div class="mb-3">
+                    <label for="cusName" class="form-label">Customer Name</label>
+                    <input type="text" class="form-control" id="cusName">
+                </div>
+
+                <div class="mb-3">
+                    <label for="inventoryId" class="form-label">Inventory ID</label>
+                    <input type="text" class="form-control" id="inventoryId">
+                </div>
+
+                <div class="mb-3">
+                    <label for="refundedQuantity" class="form-label">Refunded Quantity</label>
+                    <input type="number" class="form-control" id="refundedQuantity">
+                </div>
+
+                <button id="process_refund" type="button" class="btn btn-primary">Process Refund</button>
+            </form>
+        </section>
+
 
     </div>
 </div>
@@ -1110,6 +1164,7 @@
 <script src="javaScript/Supplier.js"></script>
 <script src="javaScript/User.js"></script>
 <script src="javaScript/AdminPanel.js"></script>
+<script src="javaScript/Refund.js"></script>
 
 <script>
     $(document).ready(function(){

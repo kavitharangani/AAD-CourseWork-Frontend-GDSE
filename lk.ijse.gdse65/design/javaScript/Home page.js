@@ -7,6 +7,7 @@ $("#order").css('display','none');
 $("#place_order").css('display','none');
 $("#adminPanel").css('display','none');
 $("#container").css('display','none');
+$("#refund_form").css('display','none');
 
 
 /*Buttons*/
@@ -22,6 +23,7 @@ $('#customer_btn').on("click", () => {
     $("#place_order").css('display','none');
     $("#adminPanel").css('display','none');
     $("#container").css('display','none');
+    $("#refund_form").css('display','none');
 
 
 })
@@ -37,8 +39,7 @@ $('#employee_btn').on("click", () => {
     $("#place_order").css('display','none');
     $("#adminPanel").css('display','none');
     $("#container").css('display','none');
-
-
+    $("#refund_form").css('display','none');
 
 })
 $('#supplier_btn').on("click", () => {
@@ -52,7 +53,7 @@ $('#supplier_btn').on("click", () => {
     $("#main-panel").css('display','none');
     $("#place_order").css('display','none');
     $("#adminPanel").css('display','none');
-
+    $("#refund_form").css('display','none');
 
 })
 
@@ -68,7 +69,7 @@ $('#item_btn').on("click", () => {
     $("#place_order").css('display','none');
     $("#adminPanel").css('display','none');
     $("#container").css('display','none');
-
+    $("#refund_form").css('display','none');
 
 
 
@@ -85,7 +86,7 @@ $('#inventory_btn').on("click", () => {
     $("#place_order").css('display','none');
     $("#adminPanel").css('display','none');
     $("#container").css('display','none');
-
+    $("#refund_form").css('display','none');
 
 
 
@@ -101,7 +102,7 @@ $('#sale_btn').on("click", () => {
     $("#main-panel").css('display','none');
     $("#place_order").css('display','none');
     $("#adminPanel").css('display','none');
-
+    $("#refund_form").css('display','none');
 
 })
 
@@ -117,7 +118,23 @@ $('#adminPanel_btn').on("click", () => {
     $("#place_order").css('display','none');
     $("#adminPanel").css('display','block');
     $("#container").css('display','none');
+    $("#refund_form").css('display','none');
 
+
+})
+$('#refund_btn').on("click", () => {
+    event.preventDefault();
+    $("#customer").css('display','none');
+    $("#employee").css('display','none');
+    $("#supplier").css('display','none');
+    $("#item").css('display','none');
+    $("#order").css('display','none');
+    $("#inventory").css('display','none');
+    $("#main-panel").css('display','none');
+    $("#place_order").css('display','none');
+    $("#adminPanel").css('display','none');
+    $("#container").css('display','none');
+    $("#refund_form").css('display','block');
 
 
 })
@@ -133,7 +150,7 @@ $('#logoutButton').on("click", () => {
     $("#place_order").css('display','none');
     $("#adminPanel").css('display','none');
     $("#container").css('display','block');
-
+    $("#refund_form").css('display','none');
 
 })
 

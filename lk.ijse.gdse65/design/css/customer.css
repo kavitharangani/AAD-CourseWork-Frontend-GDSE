@@ -67,11 +67,10 @@
 }
 .customer > section:nth-child(3) {
     position: absolute;
-    right: 1066px;
+    right: 1264px;
     width: 18vw;
     top: 682px;
     bottom: 0;
-
 }
 .customer > section:nth-child(2) > div>input{
     position: relative;

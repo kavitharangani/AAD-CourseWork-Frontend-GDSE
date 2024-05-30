@@ -11,7 +11,7 @@ $(document).ready(function (){
             success: function (resp) {
                 for (const supplier of resp) {
                     let row = `<tr><td>${supplier.supplier_id}</td><td>${supplier.supplier_name}</td><td>${supplier.category}</td><td>${supplier.address_line_01}</td><td>${supplier.address_line_02}</td><td>${supplier.address_line_03}</td><td>${supplier.address_line_04}</td><td>${supplier.address_line_05}</td><td>${supplier.address_line_06}</td>
-                                    <td>${supplier.contact_no_1}</td><td>${supplier.contact_no_2}</td><td>${supplier.email}</td></tr>`;
+                                    <td>${supplier.contact_no_01}</td><td>${supplier.contact_no_02}</td><td>${supplier.email}</td></tr>`;
                     $("#supplier-tbl-body").append(row);
                 }
                 callMethod();
