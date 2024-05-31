@@ -1,6 +1,7 @@
 $(document).ready(function () {
     function loadAllEmployee() {
         $("#employee-tbl-body").empty();
+        // validateAndRefreshToken();
         $.ajax({
             url: "http://localhost:8081/shop/api/v1/employee",
             method: "GET",
@@ -10,8 +11,10 @@ $(document).ready(function () {
             },
             success: function (resp) {
                 for (const employee of resp) {
-                    let row = `<tr><td>${employee.employeeId}</td><td>${employee.employeeName}</td><td>${employee.gender}</td><td>${employee.role}</td>
-                                    <td>${employee.dob}</td><td>${employee.joinDate}</td><td>${employee.attachedBranch}</td><td>${employee.contactNo}</td><td>${employee.email}</td></tr>`;
+                    let row = `<tr><td>${employee.employeeId}</td><td>${employee.employeeName}</td><td>${employee.gender}</td><td>${employee.status}</td>
+                                    <td>${employee.designation}</td><td>${employee.role}</td><td>${employee.dob}</td><td>${employee.joinDate}</td><td>${employee.attachedBranch}</td>
+                                    <td>${employee.employeeAddress1}</td><td>${employee.employeeAddress2}</td><td>${employee.employeeAddress3}</td><td>${employee.employeeAddress4}</td><td>${employee.employeeAddress5}</td>
+                                    <td>${employee.contactNo}</td><td>${employee.email}</td><td>${employee.informInCaseOfEmergency}</td><td>${employee.emergencyContactNo}</td></tr>`;
                     $("#employee-tbl-body").append(row);
                 }
                 callMethod();
@@ -70,7 +73,7 @@ $(document).ready(function () {
 
         let fileInput = document.getElementById('emp_pic');
         formData.append("employeeProfilePic", fileInput.files[0]);
-
+        // validateAndRefreshToken();
         $.ajax({
             method: "POST",
             url: "http://localhost:8081/shop/api/v1/employee",
@@ -119,7 +122,7 @@ $(document).ready(function () {
         if (fileInput.files.length > 0) {
             formData.append("employeeProfilePic", fileInput.files[0]);
         }
-
+        // validateAndRefreshToken();
         $.ajax({
             method: "PATCH",
             url: "http://localhost:8081/shop/api/v1/employee", // Include employee ID in URL
@@ -140,7 +143,7 @@ $(document).ready(function () {
     });
     $("#delete_employee").click(function () {
         let empID = $("#emp_id").val();
-
+        // validateAndRefreshToken();
         $.ajax({
             method: "DELETE",
             url: "http://localhost:8081/shop/api/v1/employee/" + empID,

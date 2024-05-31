@@ -1,6 +1,7 @@
 $(document).ready(function () {
     function loadAllItems() {
         $("#item-tbl-body").empty();
+        // validateAndRefreshToken();
         $.ajax({
             url: "http://localhost:8081/shop/api/v1/item",
             method: "GET",
@@ -50,6 +51,7 @@ $(document).ready(function () {
             // item_qty: $("#item_qty").val(),
         };
 
+        // validateAndRefreshToken();
         $.ajax({
             method: "POST",
             url: "http://localhost:8081/shop/api/v1/item",
@@ -77,6 +79,7 @@ $(document).ready(function () {
             // item_qty: $("#item_qty").val()
         };
 
+        // validateAndRefreshToken();
         $.ajax({
             method: "PATCH",
             url: "http://localhost:8081/shop/api/v1/item/" + formData.item_code,
@@ -99,6 +102,7 @@ $(document).ready(function () {
     $("#delete_item").click(function () {
         let item_id = $("#item_id").val();
 
+        // validateAndRefreshToken();
         $.ajax({
             method: "DELETE",
             url: "http://localhost:8081/shop/api/v1/item/" + item_id,

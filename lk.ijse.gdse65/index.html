@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="design/css/inventory.css">
     <link rel="stylesheet" href="design/css/sale.css">
     <link rel="stylesheet" href="design/css/adminpanel.css">
+    <link rel="stylesheet" href="design/css/refund.css">
 
     <link rel="stylesheet" href="design/css/style.css">
     <link rel="stylesheet" href="assest/img/favicon.png">
@@ -99,7 +100,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" id="logoutButton">
+                    <a class="nav-link" href="./logging.html" id="logoutButton">
                         <i class="icon-paper menu-icon"></i>
                         <span class="menu-title">Logout</span>
                     </a>
@@ -323,6 +324,7 @@
                     </thead>
                     <tbody id="customer-tbl-body">
                     <tr>
+                        <td></td>
                         <td></td>
                         <td></td>
                         <td></td>
@@ -807,19 +809,6 @@
             <input id="size" type="number" class="form-control"
                    aria-describedby="emailHelp" placeholder="Enter Size..">
         </div>
-        <!--        <div class="col-md-4">-->
-        <!--            <label for="size" class="form-label">Size</label>-->
-        <!--            <select id="size" class="form-select">-->
-        <!--                <option selected>Choose...</option>-->
-        <!--                <option value="size 5">Size 5</option>-->
-        <!--                <option value="size 6">Size 6</option>-->
-        <!--                <option value="size 7">Size 7</option>-->
-        <!--                <option value="size 8">Size 8</option>-->
-        <!--                <option value="size 9">Size 9</option>-->
-        <!--                <option value="size 10">Size 10</option>-->
-        <!--                <option value="size 11">Size 11</option>-->
-        <!--            </select>-->
-        <!--        </div>-->
         <div class="mb-3">
             <label for="unit_price_sale" class="form-label">unit_price_sale</label>
             <input id="unit_price_sale" type="number" class="form-control" aria-describedby="emailHelp" placeholder="Enter Sale Price.." oninput="calculateExpectedProfit()">
@@ -850,12 +839,10 @@
                 <th scope="col">item_code</th>
                 <th scope="col">item_desc</th>
                 <th scope="col">item_qty</th>
-                <th scope="col">item_pic </th>
                 <th scope="col">category</th>
                 <th scope="col">size</th>
                 <th scope="col">unit_price_sale</th>
                 <th scope="col">unit_price_buy</th>
-                <th scope="col">Address 06</th>
                 <th scope="col">expected_profit</th>
                 <th scope="col">profit_margin</th>
                 <th scope="col">status</th>
@@ -863,8 +850,6 @@
             </thead>
             <tbody id="inventory-tbl-body">
             <tr>
-                <td></td>
-                <td></td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -1091,54 +1076,57 @@
         <section id="refund_form">
             <h2>Refund Processing Form</h2>
             <form>
-                <div class="mb-3">
-                    <label for="refund_desc" class="form-label">Description</label>
-                    <input type="text" class="form-control" id="refund_desc">
-                </div>
+                <section>
+                    <div class="mb-3">
+                        <label for="refund_desc" class="form-label">Description</label>
+                        <input type="text" class="form-control" id="refund_desc">
+                    </div>
 
-                <div class="mb-3">
-                    <label for="refund_date" class="form-label">Refund Date</label>
-                    <input id="refund_date" type="date" class="form-control">
-                </div>
+                    <div class="mb-3">
+                        <label for="refund_date" class="form-label">Refund Date</label>
+                        <input id="refund_date" type="date" class="form-control">
+                    </div>
 
-                <div class="form-group">
-                    <label for="employeeRef">Employee Code</label>
-                    <select class="form-control" id="employeeRef">
-                        <option selected>Select Employee code</option>
-                    </select>
-                </div>
+                    <div class="form-group">
+                        <label for="employeeRef">Employee Code</label>
+                        <select class="form-control" id="employeeRef">
+                            <option selected>Select Employee code</option>
+                        </select>
+                    </div>
 
-                <div class="mb-3">
-                    <label for="employeename" class="form-label">Employee Name</label>
-                    <input type="text" class="form-control" id="employeename" readonly>
-                </div>
+                    <div class="mb-3">
+                        <label for="employeename" class="form-label">Employee Name</label>
+                        <input type="text" class="form-control" id="employeename" readonly>
+                    </div>
 
-                <div class="mb-3">
-                    <label for="re_order_no" class="form-label">Refund Order No</label>
-                    <input type="text" class="form-control" id="re_order_no">
-                </div>
+                    <div class="mb-3">
+                        <label for="re_order_no" class="form-label">Refund Order No</label>
+                        <input type="text" class="form-control" id="re_order_no">
+                    </div>
+                </section>
+                <section>
+                    <div class="mb-3">
+                        <label for="cusId" class="form-label">Customer ID</label>
+                        <input type="text" class="form-control" id="cusId">
+                    </div>
 
-                <div class="mb-3">
-                    <label for="cusId" class="form-label">Customer ID</label>
-                    <input type="text" class="form-control" id="cusId">
-                </div>
+                    <div class="mb-3">
+                        <label for="cusName" class="form-label">Customer Name</label>
+                        <input type="text" class="form-control" id="cusName">
+                    </div>
 
-                <div class="mb-3">
-                    <label for="cusName" class="form-label">Customer Name</label>
-                    <input type="text" class="form-control" id="cusName">
-                </div>
+                    <div class="mb-3">
+                        <label for="inventoryId" class="form-label">Inventory ID</label>
+                        <input type="text" class="form-control" id="inventoryId">
+                    </div>
 
-                <div class="mb-3">
-                    <label for="inventoryId" class="form-label">Inventory ID</label>
-                    <input type="text" class="form-control" id="inventoryId">
-                </div>
+                    <div class="mb-3">
+                        <label for="refundedQuantity" class="form-label">Refunded Quantity</label>
+                        <input type="number" class="form-control" id="refundedQuantity">
+                    </div>
 
-                <div class="mb-3">
-                    <label for="refundedQuantity" class="form-label">Refunded Quantity</label>
-                    <input type="number" class="form-control" id="refundedQuantity">
-                </div>
-
-                <button id="process_refund" type="button" class="btn btn-primary">Process Refund</button>
+                    <button id="process_refund" type="button" class="btn btn-primary">Process Refund</button>
+                </section>
             </form>
         </section>
 

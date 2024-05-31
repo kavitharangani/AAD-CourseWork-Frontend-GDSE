@@ -3,6 +3,7 @@ const loadAllItemCode = () => {
     $('#item_code').empty();
     $('#item_code').append("<option selected>Select item code</option>");
 
+    // validateAndRefreshToken();
     $.ajax({
         url: "http://localhost:8081/shop/api/v1/item",
         method: "GET",
@@ -35,6 +36,7 @@ $(document).ready(function () {
 
     function loadAllInventory() {
         $("#inventory-tbl-body").empty();
+        // validateAndRefreshToken();
         $.ajax({
             url: "http://localhost:8081/shop/api/v1/inventory",
             method: "GET",
@@ -48,7 +50,6 @@ $(document).ready(function () {
                                     <td>${item.item_code}</td>
                                     <td>${item.item_desc}</td>
                                     <td>${item.item_qty}</td>
-                                    <td>${item.item_pic}</td>
                                     <td>${item.category}</td>
                                     <td>${item.size}</td>
                                     <td>${item.unit_price_sale}</td>
@@ -72,7 +73,7 @@ $(document).ready(function () {
             let item_code = $(this).children().eq(0).text();
             let item_desc = $(this).children().eq(1).text();
             let item_qty = $(this).children().eq(2).text();
-            let item_pic = $(this).children().eq(3).text();
+            // let item_pic = $(this).children().eq(3).text();
             let category = $(this).children().eq(4).text();
             let size = $(this).children().eq(5).text();
             let unit_price_sale = $(this).children().eq(6).text();
@@ -84,7 +85,7 @@ $(document).ready(function () {
             $("#item_code").val(item_code);
             $("#item_desc").val(item_desc);
             $("#item_qty").val(item_qty);
-            $("#item_pic").val('');  // Clear the file input
+            // $("#item_pic").val('');  // Clear the file input
             $("#categorys").val(category);
             $("#size").val(size);
             $("#unit_price_sale").val(unit_price_sale);
@@ -117,7 +118,7 @@ $(document).ready(function () {
             formData.append("item_pic", fileInput.files[0]);
         }
 
-
+        // validateAndRefreshToken();
         $.ajax({
             method: "POST",
             url: "http://localhost:8081/shop/api/v1/inventory",
@@ -158,7 +159,7 @@ $(document).ready(function () {
         if (fileInput.files.length > 0) {
             formData.append("item_pic", fileInput.files[0]);
         }
-
+        // validateAndRefreshToken();
         $.ajax({
             method: "PATCH",
             url: "http://localhost:8081/shop/api/v1/inventory",

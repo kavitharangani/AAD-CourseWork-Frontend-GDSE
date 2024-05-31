@@ -1,0 +1,37 @@
+#refund_form {
+    width: 1258px;
+    position: relative;
+    left: 15px;
+    height: 100vw;
+    /* margin-left: 43px; */
+    /* margin-right: 100px; */
+    /* background: lightgreen; */
+    background: linear-gradient(to bottom, #f5faff 0%, #dde3f1 100%);
+}
+#refund_form > form{
+    display: flex;
+}
+
+#refund_form > form > section{
+    width: 60vh;
+}
+
+#refund_form > form > section:nth-child(2){
+    width: 60vh;
+    position: relative;
+    left: 35vh;
+}
+#refund_form > form > section:nth-child(1){
+    width: 60vh;
+    position: relative;
+    left: 7vh;
+}
+#refund_form > h2  {
+    position: relative;
+    left: 441px;
+    top: 10px;
+    margin: 0;
+    font-size: 26px;
+    font-family: ARADHANA;
+    padding-bottom: 3vw;
+}

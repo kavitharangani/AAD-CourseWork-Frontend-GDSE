@@ -2,6 +2,7 @@ const loadAllEmployeeCode = () => {
     $('#employeeRef').empty();
     $('#employeeRef').append("<option selected>Select Employee code</option>");
 
+    // validateAndRefreshToken();
     $.ajax({
         url: "http://localhost:8081/shop/api/v1/employee",
         method: "GET",
@@ -56,6 +57,7 @@ $(document).ready(function() {
             ]
         };
 
+        // validateAndRefreshToken();
         $.ajax({
             url: "http://localhost:8081/shop/api/v1/refund/refunds",
             method: "POST",

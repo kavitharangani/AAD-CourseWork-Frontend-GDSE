@@ -1,6 +1,7 @@
 $(document).ready(function () {
     // Function to load all customers
     const loadAllCustomers = () => {
+        // validateAndRefreshToken()
         $("#customer-tbl-body").empty();
         $.ajax({
             url: "http://localhost:8081/shop/api/v1/customer",
@@ -68,6 +69,7 @@ $(document).ready(function () {
 
     // Save customer
     $("#save_customer").click(function () {
+        // validateAndRefreshToken()
         let formData = {
             customer_code: $("#cust_id").val(),
             customer_name: $("#name").val(),
@@ -103,6 +105,7 @@ $(document).ready(function () {
 
     // Update customer
     $("#update_customer").click(function () {
+        // validateAndRefreshToken();
         let formData = {
             customer_code: $("#cust_id").val(),
             customer_name: $("#name").val(),
@@ -138,6 +141,7 @@ $(document).ready(function () {
 
     // Delete customer
     $("#delete_customer").click(function () {
+        // validateAndRefreshToken();
         let customer_id = $("#cust_id").val();
 
         $.ajax({
@@ -179,5 +183,4 @@ $(document).ready(function () {
 
     // Load customers on page load
     loadAllCustomers();
-
  });

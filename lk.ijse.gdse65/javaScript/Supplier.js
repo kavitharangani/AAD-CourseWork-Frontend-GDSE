@@ -1,6 +1,7 @@
 $(document).ready(function (){
     const loadAllSuppliers = () => {
         $("#supplier-tbl-body").empty();
+        // validateAndRefreshToken();
         $.ajax({
             url: "http://localhost:8081/shop/api/v1/suppliers",
             method: "GET",
@@ -11,7 +12,7 @@ $(document).ready(function (){
             success: function (resp) {
                 for (const supplier of resp) {
                     let row = `<tr><td>${supplier.supplier_id}</td><td>${supplier.supplier_name}</td><td>${supplier.category}</td><td>${supplier.address_line_01}</td><td>${supplier.address_line_02}</td><td>${supplier.address_line_03}</td><td>${supplier.address_line_04}</td><td>${supplier.address_line_05}</td><td>${supplier.address_line_06}</td>
-                                    <td>${supplier.contact_no_01}</td><td>${supplier.contact_no_02}</td><td>${supplier.email}</td></tr>`;
+                                    <td>${supplier.contact_no_1}</td><td>${supplier.contact_no_2}</td><td>${supplier.email}</td></tr>`;
                     $("#supplier-tbl-body").append(row);
                 }
                 callMethod();
@@ -63,11 +64,12 @@ $(document).ready(function (){
             address_line_04: $("#sad4").val(),
             address_line_05: $("#sad5").val(),
             address_line_06: $("#sad6").val(),
-            contact_no_01: $("#contact1").val(),
-            contact_no_02: $("#contact2").val(),
+            contact_no_1: $("#contact1").val(),
+            contact_no_2: $("#contact2").val(),
             email: $("#email").val()
         };
 
+        // validateAndRefreshToken();
         $.ajax({
             method: "POST",
             url: "http://localhost:8081/shop/api/v1/suppliers",
@@ -97,11 +99,12 @@ $(document).ready(function (){
             address_line_04: $("#sad4").val(),
             address_line_05: $("#sad5").val(),
             address_line_06: $("#sad6").val(),
-            contact_no_01: $("#contact1").val(),
-            contact_no_02: $("#contact2").val(),
+            contact_no_1: $("#contact1").val(),
+            contact_no_2: $("#contact2").val(),
             email: $("#email").val()
         };
 
+        // validateAndRefreshToken();
         $.ajax({
             method: "PATCH",
             url: "http://localhost:8081/shop/api/v1/suppliers",
@@ -123,6 +126,7 @@ $(document).ready(function (){
     $("#delete_supplier").click(function () {
         let supplier_id = $("#suppl_id").val();
 
+        // validateAndRefreshToken();
         $.ajax({
             method: "DELETE",
             url: "http://localhost:8081/shop/api/v1/suppliers/" + supplier_id,

@@ -13,6 +13,7 @@ $(document).ready(function() {
 const loadAllInventoryCode = () => {
     $('#order_item_id').empty().append("<option selected>Select item code</option>");
 
+    // validateAndRefreshToken();
     $.ajax({
         url: "http://localhost:8081/shop/api/v1/inventory",
         method: "GET",
@@ -42,6 +43,7 @@ $('#order_item_id').change(function(e) {
 const loadAllCustomerId = () => {
     $('#customer_id').empty().append("<option selected>Select Customer Id</option>");
 
+    // validateAndRefreshToken();
     $.ajax({
         url: "http://localhost:8081/shop/api/v1/customer",
         method: "GET",
@@ -68,6 +70,7 @@ $('#customer_id').change(function(e) {
 const loadAllEmployeeName = () => {
     $('#employee_name').empty().append("<option selected>Select employee name</option>");
 
+    // validateAndRefreshToken();
     $.ajax({
         url: "http://localhost:8081/shop/api/v1/employee",
         method: "GET",
@@ -192,6 +195,7 @@ function placeOrder() {
         orderData.saleInventoryDetails.push(item);
     });
 
+    // validateAndRefreshToken();
     $.ajax({
         url: "http://localhost:8081/shop/api/v1/sale",
         method: "POST",
