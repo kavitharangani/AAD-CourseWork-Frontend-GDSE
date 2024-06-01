@@ -73,26 +73,26 @@ $(document).ready(function () {
             let item_code = $(this).children().eq(0).text();
             let item_desc = $(this).children().eq(1).text();
             let item_qty = $(this).children().eq(2).text();
-            // let item_pic = $(this).children().eq(3).text();
-            let category = $(this).children().eq(4).text();
-            let size = $(this).children().eq(5).text();
-            let unit_price_sale = $(this).children().eq(6).text();
-            let unit_price_buy = $(this).children().eq(7).text();
-            let expected_profit = $(this).children().eq(8).text();
-            let profit_margin = $(this).children().eq(9).text();
-            let status = $(this).children().eq(10).text();
+            let category = $(this).children().eq(3).text();
+            let size = $(this).children().eq(4).text();
+            let unit_price_sale = $(this).children().eq(5).text();
+            let unit_price_buy = $(this).children().eq(6).text();
+            let expected_profit = $(this).children().eq(7).text();
+            let profit_margin = $(this).children().eq(8).text();
+            let status = $(this).children().eq(9).text();
+
+
 
             $("#item_code").val(item_code);
             $("#item_desc").val(item_desc);
             $("#item_qty").val(item_qty);
-            // $("#item_pic").val('');  // Clear the file input
             $("#categorys").val(category);
             $("#size").val(size);
             $("#unit_price_sale").val(unit_price_sale);
             $("#unit_price_buy").val(unit_price_buy);
             $("#expected_profit").val(expected_profit);
             $("#profit_margin").val(profit_margin);
-            $("#statuss").val(status);
+            $("#statuss").val(status)
         });
     }
 
