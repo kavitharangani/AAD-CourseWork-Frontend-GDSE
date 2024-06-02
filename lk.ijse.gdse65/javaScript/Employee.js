@@ -161,6 +161,7 @@ $(document).ready(function () {
                 console.error("Error updating employee:", error);
                 alert("Error updating employee. Please try again later.");
             }
+
         });
     });
 
