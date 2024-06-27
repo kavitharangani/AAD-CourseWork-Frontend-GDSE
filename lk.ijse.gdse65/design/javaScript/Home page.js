@@ -6,7 +6,7 @@ $("#inventory").css('display','none');
 $("#order").css('display','none');
 $("#place_order").css('display','none');
 $("#adminPanel").css('display','none');
-$("#container").css('display','none');
+// $("#container").css('display','none');
 $("#refund_form").css('display','none');
 
 
@@ -22,7 +22,7 @@ $('#customer_btn').on("click", () => {
     $("#main-panel").css('display','none');
     $("#place_order").css('display','none');
     $("#adminPanel").css('display','none');
-    $("#container").css('display','none');
+    // $("#container").css('display','none');
     $("#refund_form").css('display','none');
 
 
@@ -38,7 +38,7 @@ $('#employee_btn').on("click", () => {
     $("#main-panel").css('display','none');
     $("#place_order").css('display','none');
     $("#adminPanel").css('display','none');
-    $("#container").css('display','none');
+    // $("#container").css('display','none');
     $("#refund_form").css('display','none');
 
 })
@@ -68,7 +68,7 @@ $('#item_btn').on("click", () => {
     $("#main-panel").css('display','none');
     $("#place_order").css('display','none');
     $("#adminPanel").css('display','none');
-    $("#container").css('display','none');
+    // $("#container").css('display','none');
     $("#refund_form").css('display','none');
 
 
@@ -85,7 +85,7 @@ $('#inventory_btn').on("click", () => {
     $("#main-panel").css('display','none');
     $("#place_order").css('display','none');
     $("#adminPanel").css('display','none');
-    $("#container").css('display','none');
+    // $("#container").css('display','none');
     $("#refund_form").css('display','none');
 
 
@@ -117,7 +117,7 @@ $('#adminPanel_btn').on("click", () => {
     $("#main-panel").css('display','none');
     $("#place_order").css('display','none');
     $("#adminPanel").css('display','block');
-    $("#container").css('display','none');
+    // $("#container").css('display','none');
     $("#refund_form").css('display','none');
 
 
@@ -133,26 +133,26 @@ $('#refund_btn').on("click", () => {
     $("#main-panel").css('display','none');
     $("#place_order").css('display','none');
     $("#adminPanel").css('display','none');
-    $("#container").css('display','none');
+    // $("#container").css('display','none');
     $("#refund_form").css('display','block');
 
 
 })
-$('#logoutButton').on("click", () => {
-    event.preventDefault();
-    $("#customer").css('display','none');
-    $("#employee").css('display','none');
-    $("#supplier").css('display','none');
-    $("#item").css('display','none');
-    $("#order").css('display','none');
-    $("#inventory").css('display','none');
-    $("#main-panel").css('display','none');
-    $("#place_order").css('display','none');
-    $("#adminPanel").css('display','none');
-    $("#container").css('display','block');
-    $("#refund_form").css('display','none');
-
-})
+// $('#logoutButton').on("click", () => {
+//     event.preventDefault();
+//     $("#customer").css('display','none');
+//     $("#employee").css('display','none');
+//     $("#supplier").css('display','none');
+//     $("#item").css('display','none');
+//     $("#order").css('display','none');
+//     $("#inventory").css('display','none');
+//     $("#main-panel").css('display','none');
+//     $("#place_order").css('display','none');
+//     $("#adminPanel").css('display','none');
+//     $("#container").css('display','block');
+//     $("#refund_form").css('display','none');
+//
+// })
 
 /*Nav Bar*/
 $('.navbar-brand').on("click", () => {
@@ -324,3 +324,15 @@ $('.dropdown-toggle').on('click', () => {
         clicked = false;
     }
 });
+function logout() {
+    // Clear tokens from local storage
+    localStorage.removeItem("accessToken");
+    localStorage.removeItem("refreshToken");
+    localStorage.removeItem("tokenExpiryTime");
+
+    // Clear the interval that refreshes the token
+    // clearInterval(refreshTokenInterval);
+
+    // Redirect to the login page
+    window.location.href = "logging.html";
+}

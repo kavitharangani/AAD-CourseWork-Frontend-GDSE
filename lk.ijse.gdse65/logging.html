@@ -94,70 +94,236 @@
             });
         });
 
-        function setTokenExpiry(accessToken) {
-            const tokenPayload = JSON.parse(atob(accessToken.split('.')[1]));
-            const expiryTime = tokenPayload.exp * 1000;
-            localStorage.setItem("tokenExpiryTime", expiryTime);
+    //     function setTokenExpiry(accessToken) {
+    //         const tokenPayload = JSON.parse(atob(accessToken.split('.')[1]));
+    //         const expiryTime = tokenPayload.exp * 1000;
+    //         localStorage.setItem("tokenExpiryTime", expiryTime);
+    //     }
+    //
+    //     function isTokenExpired() {
+    //         const expiryTime = localStorage.getItem("tokenExpiryTime");
+    //         return new Date().getTime() > expiryTime;
+    //     }
+    //
+    //     function refreshToken() {
+    //         const refreshToken = localStorage.getItem("refreshToken");
+    //         if (!refreshToken) {
+    //             return;
+    //         }
+    //
+    //         var xhr = new XMLHttpRequest();
+    //         xhr.open("POST", "http://localhost:8081/shop/api/v1/auth/refresh", true);
+    //         xhr.setRequestHeader("Content-Type", "application/json");
+    //         xhr.onreadystatechange = function () {
+    //             if (xhr.readyState === 4 && xhr.status === 200) {
+    //                 var response = JSON.parse(xhr.responseText);
+    //                 var accessToken = response.token.split(':')[0].trim();
+    //                 var newRefreshToken = response.token.split(':')[1].trim();
+    //                 localStorage.setItem("accessToken", accessToken);
+    //                 localStorage.setItem("refreshToken", newRefreshToken);
+    //                 setTokenExpiry(accessToken);
+    //                 console.log("Access Token refreshed:", accessToken);
+    //             } else if (xhr.readyState === 4) {
+    //                 console.error("Token refresh failed. Status:", xhr.status);
+    //                 // Optionally, you can redirect the user to the login page or show a message
+    //                 // window.location.href = "login.html";
+    //             }
+    //         };
+    //         var data = JSON.stringify({
+    //             "refreshToken": refreshToken
+    //         });
+    //         xhr.send(data);
+    //     }
+    //
+    //     const accessToken = localStorage.getItem("accessToken");
+    //     // const refreshToken = localStorage.getItem("refreshToken");
+    //
+    //     if (accessToken) {
+    //         if (isTokenExpired()) {
+    //             refreshToken();
+    //         } else {
+    //             // Redirect to the main page if the user is already logged in
+    //             window.location.href = "index.html";
+    //         }
+    //     }
+    //     refreshToken();
+    //     document.getElementById("signUpBtn").addEventListener("click", function() {
+    //         var name = document.getElementById("nameInput").value;
+    //         var email = document.getElementById("emailInput").value;
+    //         var password = document.getElementById("passwordInput").value;
+    //         var role = document.getElementById("roleInput").value;
+    //
+    //         var xhr = new XMLHttpRequest();
+    //         xhr.open("POST", "http://localhost:8081/shop/api/v1/auth/signup", true);
+    //         xhr.setRequestHeader("Content-Type", "application/json");
+    //         xhr.onreadystatechange = function () {
+    //             if (xhr.readyState === 4 && xhr.status === 200) {
+    //                 var response = JSON.parse(xhr.responseText);
+    //                 var accessToken = response.token.split(':')[0].trim();
+    //                 var refreshToken = response.token.split(':')[1].trim();
+    //                 localStorage.setItem("accessToken", accessToken);
+    //                 localStorage.setItem("refreshToken", refreshToken);
+    //                 setTokenExpiry(accessToken);
+    //                 console.log("Access Token:", accessToken);
+    //                 console.log("Refresh Token:", refreshToken);
+    //                 // Redirect after signup if needed
+    //                 if (localStorage.getItem("accessToken")) {
+    //                     window.location.href = "index.html";
+    //                 }
+    //             }
+    //         };
+    //         var data = JSON.stringify({
+    //             "name": name,
+    //             "email": email,
+    //             "password": password,
+    //             "role": role
+    //         });
+    //         xhr.send(data);
+    //     });
+    //
+    //     document.getElementById("signInBtn").addEventListener("click", function() {
+    //         refreshToken();
+    //         var email = document.getElementById("emailLogin").value;
+    //         var password = document.getElementById("passwordLogin").value;
+    //
+    //         var xhr = new XMLHttpRequest();
+    //         xhr.open("POST", "http://localhost:8081/shop/api/v1/auth/signin", true);
+    //         xhr.setRequestHeader("Content-Type", "application/json");
+    //         xhr.onreadystatechange = function () {
+    //             if (xhr.readyState === 4) {
+    //                 if (xhr.status === 200) {
+    //                     var response = JSON.parse(xhr.responseText);
+    //                     var accessToken = response.token.split(':')[0].trim();
+    //                     var refreshToken = response.token.split(':')[1].trim();
+    //                     localStorage.setItem("accessToken", accessToken);
+    //                     localStorage.setItem("refreshToken", refreshToken);
+    //                     setTokenExpiry(accessToken);
+    //                     console.log("Access Token:", accessToken);
+    //                     console.log("Refresh Token:", refreshToken);
+    //
+    //                     // Redirect to another page if the access token is successfully stored
+    //                     if (localStorage.getItem("accessToken")) {
+    //                         window.location.href = "index.html";  // Change this to your desired page
+    //                     }
+    //                 } else {
+    //                     // Handle unsuccessful sign-in, e.g., display an error message
+    //                     console.error("Sign In failed. Status:", xhr.status);
+    //                 }
+    //             }
+    //         };
+    //         var data = JSON.stringify({
+    //             "email": email,
+    //             "password": password
+    //         });
+    //         xhr.send(data);
+    //     });
+    //
+    //     // Call refreshToken function periodically (e.g., every 15 minutes)
+    //     setInterval(function() {
+    //         if (isTokenExpired()) {
+    //             refreshToken();
+    //         }
+    //     }, 15 * 60 * 1000); // 15 minutes
+    });
+</script>
+<script>
+    function setTokenExpiry(accessToken) {
+        const tokenPayload = JSON.parse(atob(accessToken.split('.')[1]));
+        const expiryTime = tokenPayload.exp * 1000;
+        localStorage.setItem("tokenExpiryTime", expiryTime);
+    }
+
+    function isTokenExpired() {
+        const expiryTime = localStorage.getItem("tokenExpiryTime");
+        return new Date().getTime() > expiryTime;
+    }
+
+    function refreshToken() {
+        const refreshToken = localStorage.getItem("refreshToken");
+        if (!refreshToken) {
+            return;
         }
 
-        function isTokenExpired() {
-            const expiryTime = localStorage.getItem("tokenExpiryTime");
-            return new Date().getTime() > expiryTime;
-        }
-
-        function refreshToken() {
-            const refreshToken = localStorage.getItem("refreshToken");
-            if (!refreshToken) {
-                return;
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "http://localhost:8081/shop/api/v1/auth/refresh", true);
+        xhr.setRequestHeader("Content-Type", "application/json");
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                var response = JSON.parse(xhr.responseText);
+                var accessToken = response.token.split(':')[0].trim();
+                var newRefreshToken = response.token.split(':')[1].trim();
+                localStorage.setItem("accessToken", accessToken);
+                localStorage.setItem("refreshToken", newRefreshToken);
+                setTokenExpiry(accessToken);
+                console.log("Access Token refreshed:", accessToken);
+            } else if (xhr.readyState === 4) {
+                console.error("Token refresh failed. Status:", xhr.status);
+                // Optionally, you can redirect the user to the login page or show a message
+                // window.location.href = "login.html";
             }
+        };
+        var data = JSON.stringify({
+            "refreshToken": refreshToken
+        });
+        xhr.send(data);
+    }
 
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", "http://localhost:8081/shop/api/v1/auth/refresh", true);
-            xhr.setRequestHeader("Content-Type", "application/json");
-            xhr.onreadystatechange = function () {
-                if (xhr.readyState === 4 && xhr.status === 200) {
-                    var response = JSON.parse(xhr.responseText);
-                    var accessToken = response.token.split(':')[0].trim();
-                    var newRefreshToken = response.token.split(':')[1].trim();
-                    localStorage.setItem("accessToken", accessToken);
-                    localStorage.setItem("refreshToken", newRefreshToken);
-                    setTokenExpiry(accessToken);
-                    console.log("Access Token refreshed:", accessToken);
-                } else if (xhr.readyState === 4) {
-                    console.error("Token refresh failed. Status:", xhr.status);
-                    // Optionally, you can redirect the user to the login page or show a message
-                    // window.location.href = "login.html";
+    const accessToken = localStorage.getItem("accessToken");
+
+    if (accessToken) {
+        if (isTokenExpired()) {
+            refreshToken();
+        } else {
+            // Redirect to the main page if the user is already logged in
+            window.location.href = "index.html";
+        }
+    }
+
+    document.getElementById("signUpBtn").addEventListener("click", function() {
+        var name = document.getElementById("nameInput").value;
+        var email = document.getElementById("emailInput").value;
+        var password = document.getElementById("passwordInput").value;
+        var role = document.getElementById("roleInput").value;
+
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "http://localhost:8081/shop/api/v1/auth/signup", true);
+        xhr.setRequestHeader("Content-Type", "application/json");
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                var response = JSON.parse(xhr.responseText);
+                var accessToken = response.token.split(':')[0].trim();
+                var refreshToken = response.token.split(':')[1].trim();
+                localStorage.setItem("accessToken", accessToken);
+                localStorage.setItem("refreshToken", refreshToken);
+                setTokenExpiry(accessToken);
+                console.log("Access Token:", accessToken);
+                console.log("Refresh Token:", refreshToken);
+                // Redirect after signup if needed
+                if (localStorage.getItem("accessToken")) {
+                    window.location.href = "index.html";
                 }
-            };
-            var data = JSON.stringify({
-                "refreshToken": refreshToken
-            });
-            xhr.send(data);
-        }
-
-        const accessToken = localStorage.getItem("accessToken");
-        // const refreshToken = localStorage.getItem("refreshToken");
-
-        if (accessToken) {
-            if (isTokenExpired()) {
-                refreshToken();
-            } else {
-                // Redirect to the main page if the user is already logged in
-                window.location.href = "index.html";
             }
-        }
-        refreshToken();
-        document.getElementById("signUpBtn").addEventListener("click", function() {
-            var name = document.getElementById("nameInput").value;
-            var email = document.getElementById("emailInput").value;
-            var password = document.getElementById("passwordInput").value;
-            var role = document.getElementById("roleInput").value;
+        };
+        var data = JSON.stringify({
+            "name": name,
+            "email": email,
+            "password": password,
+            "role": role
+        });
+        xhr.send(data);
+    });
 
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", "http://localhost:8081/shop/api/v1/auth/signup", true);
-            xhr.setRequestHeader("Content-Type", "application/json");
-            xhr.onreadystatechange = function () {
-                if (xhr.readyState === 4 && xhr.status === 200) {
+    document.getElementById("signInBtn").addEventListener("click", function() {
+        refreshToken();
+        var email = document.getElementById("emailLogin").value;
+        var password = document.getElementById("passwordLogin").value;
+
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "http://localhost:8081/shop/api/v1/auth/signin", true);
+        xhr.setRequestHeader("Content-Type", "application/json");
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4) {
+                if (xhr.status === 200) {
                     var response = JSON.parse(xhr.responseText);
                     var accessToken = response.token.split(':')[0].trim();
                     var refreshToken = response.token.split(':')[1].trim();
@@ -166,67 +332,44 @@
                     setTokenExpiry(accessToken);
                     console.log("Access Token:", accessToken);
                     console.log("Refresh Token:", refreshToken);
-                    // Redirect after signup if needed
+
+                    // Redirect to another page if the access token is successfully stored
                     if (localStorage.getItem("accessToken")) {
-                        window.location.href = "index.html";
+                        window.location.href = "index.html";  // Change this to your desired page
                     }
+                } else {
+                    // Handle unsuccessful sign-in, e.g., display an error message
+                    console.error("Sign In failed. Status:", xhr.status);
                 }
-            };
-            var data = JSON.stringify({
-                "name": name,
-                "email": email,
-                "password": password,
-                "role": role
-            });
-            xhr.send(data);
-        });
-
-        document.getElementById("signInBtn").addEventListener("click", function() {
-            refreshToken();
-            var email = document.getElementById("emailLogin").value;
-            var password = document.getElementById("passwordLogin").value;
-
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", "http://localhost:8081/shop/api/v1/auth/signin", true);
-            xhr.setRequestHeader("Content-Type", "application/json");
-            xhr.onreadystatechange = function () {
-                if (xhr.readyState === 4) {
-                    if (xhr.status === 200) {
-                        var response = JSON.parse(xhr.responseText);
-                        var accessToken = response.token.split(':')[0].trim();
-                        var refreshToken = response.token.split(':')[1].trim();
-                        localStorage.setItem("accessToken", accessToken);
-                        localStorage.setItem("refreshToken", refreshToken);
-                        setTokenExpiry(accessToken);
-                        console.log("Access Token:", accessToken);
-                        console.log("Refresh Token:", refreshToken);
-
-                        // Redirect to another page if the access token is successfully stored
-                        if (localStorage.getItem("accessToken")) {
-                            window.location.href = "index.html";  // Change this to your desired page
-                        }
-                    } else {
-                        // Handle unsuccessful sign-in, e.g., display an error message
-                        console.error("Sign In failed. Status:", xhr.status);
-                    }
-                }
-            };
-            var data = JSON.stringify({
-                "email": email,
-                "password": password
-            });
-            xhr.send(data);
-        });
-
-        // Call refreshToken function periodically (e.g., every 15 minutes)
-        setInterval(function() {
-            if (isTokenExpired()) {
-                refreshToken();
             }
-        }, 15 * 60 * 1000); // 15 minutes
+        };
+        var data = JSON.stringify({
+            "email": email,
+            "password": password
+        });
+        xhr.send(data);
     });
 
+    // Call refreshToken function periodically (e.g., every 15 minutes)
+    const refreshTokenInterval = setInterval(function() {
+        if (isTokenExpired()) {
+            refreshToken();
+        }
+    }, 15 * 60 * 1000); // 15 minutes
+
+    function logout() {
+        // Clear tokens from local storage
+        localStorage.removeItem("accessToken");
+        localStorage.removeItem("refreshToken");
+        localStorage.removeItem("tokenExpiryTime");
+
+        // Clear the interval that refreshes the token
+        clearInterval(refreshTokenInterval);
+
+        // Redirect to the login page
+        window.location.href = "logging.html";
+    }
 </script>
-<script src="javaScript/User.js"></script>
+<!--<script src="javaScript/User.js"></script>-->
 </body>
 </html>
